@@ -1,16 +1,17 @@
 using JetBrains.Annotations;
-using RosSharp.RosBridgeClient;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-public class PlayAsAttackerButtonAction : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class PlayAsDefenderButtonAction : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     [SerializeField]
-    private System.String playerName;
+    private Text playerName;
 
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
 
@@ -29,9 +30,9 @@ public class PlayAsAttackerButtonAction : UnityPublisher<RosSharp.RosBridgeClien
         Publish(message);
     }
 
-    public void playAsAttackerAction()
+    public void playAsDefenderAction()
     {
-        Debug.Log($"{this.Topic} ({this.playerName}) is trying to become a attacker");
-        PublishMessage($"signin D {this.playerName}");
+        Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a defender");
+        PublishMessage($"signin D {this.playerName.text}");
     }
 }
