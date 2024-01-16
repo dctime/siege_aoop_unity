@@ -7,31 +7,35 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-public class PlayAsDefenderButtonAction : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+namespace RosSharp.RosBridgeClient
 {
-    [SerializeField]
-    private System.String playerName;
-
-    private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
-
-    protected override void Start()
+    public class PlayAsDefenderButtonAction : UnityPublisher<MessageTypes.Std.String>
     {
-        base.Start();
-        message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
-    }
-    private void PublishMessage(System.String data)
-    {
+        [SerializeField]
+        private System.String playerName;
 
-        // Populate the data in your Float64MultiArray here
-        // For example:
-        message.data = data;
+        private MessageTypes.Std.String message;
 
-        Publish(message);
-    }
+        protected override void Start()
+        {
+            base.Start();
+            message = new MessageTypes.Std.String();
+        }
+        private void PublishMessage(System.String data)
+        {
 
-    public void playAsDefenderAction()
-    {
-        Debug.Log($"{this.Topic} ({this.playerName}) is trying to become a defender");
-        PublishMessage($"signin D {this.playerName}");
+            // Populate the data in your Float64MultiArray here
+            // For example:
+            message.data = data;
+            Debug.Log($"Publishing Data: {message.data}");
+            Publish(message);
+        }
+
+        public void playAsDefenderAction()
+        {
+            Debug.Log($"{this.Topic} ({this.playerName}) is trying to become a defender");
+            PublishMessage("f you");
+        }
     }
 }
+
