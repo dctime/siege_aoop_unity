@@ -33,6 +33,6 @@ public class PlayAsAttackerButtonAction : UnityPublisher<RosSharp.RosBridgeClien
     public void playAsAttackerAction()
     {
         Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a attacker");
-        PublishMessage($"signin D {this.playerName.text}");
+        PublishMessage($"signin A {this.playerName.text}");
     }
 }

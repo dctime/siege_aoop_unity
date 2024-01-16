@@ -8,17 +8,17 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-namespace RosSharp.RosBridgeClient
+public class PlayAsDefenderButtonAction : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     [SerializeField]
     private Text playerName;
 
-        private MessageTypes.Std.String message;
+        private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
 
         protected override void Start()
         {
             base.Start();
-            message = new MessageTypes.Std.String();
+            message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
         }
         private void PublishMessage(System.String data)
         {
