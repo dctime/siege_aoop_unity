@@ -7,7 +7,7 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-public class DisplayPlayerName : MonoBehaviour
+public class DisplayPlayerNameAction : MonoBehaviour
 {
     public Text playerName;
     public InputField display;
