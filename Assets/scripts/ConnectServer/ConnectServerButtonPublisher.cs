@@ -10,12 +10,9 @@ using System;
 public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
-    
     private string connectServerId;
-
     [SerializeField]
     private ResponsesDictionary responsesDictionary;
-
     [SerializeField]
     private ConnectServerResponse connectServerResponse;
 
@@ -32,6 +29,7 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
         responsesDictionary.AddResponse(connectServerId, connectServerResponse);
+        Debug.Log($"Added id,response to dictionary");
     }
 
     public void ConnectServerAction()

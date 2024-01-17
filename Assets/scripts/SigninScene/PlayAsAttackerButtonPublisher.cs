@@ -12,14 +12,10 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 {
     [SerializeField]
     private Text playerName;
-
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
-
     private string playAsAttackerButtonId;
-
     [SerializeField]
     private ResponsesDictionary responsesDictionary;
-
     [SerializeField]
     private SigninResponse signinResponse;
 
@@ -35,11 +31,12 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
         responsesDictionary.AddResponse(playAsAttackerButtonId, signinResponse);
+        Debug.Log($"Added id,response to dictionary");
     }
 
     public void PlayAsAttackerAction()
     {
-        Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a attacker");
+        Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become an attacker");
         PublishMessage($"signin A {this.playerName.text}");
     }
 }

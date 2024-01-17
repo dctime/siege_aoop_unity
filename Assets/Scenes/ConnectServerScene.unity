@@ -461,7 +461,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1232524492}
         m_TargetAssemblyTypeName: ConnectServerButtonPublisher, Assembly-CSharp
-        m_MethodName: connectServerAction
+        m_MethodName: ConnectServerAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -522,6 +522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /connect
+  responsesDictionary: {fileID: 0}
+  connectServerResponse: {fileID: 0}
 --- !u!114 &1232524493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31139f5a27b2a452ca5faf5494abd4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childResponse: {fileID: 0}
 --- !u!4 &1986344287
 Transform:
   m_ObjectHideFlags: 0

@@ -18,19 +18,6 @@ class ResponsesDictionary : MonoBehaviour
     {
         responsesDictionary.Add(key, value);
     }
-
-    public void CallResponse(string id, string responseMessage)
-    {
-        if (responsesDictionary.TryGetValue(id, out childResponse))
-        {
-            childResponse.ResponseToMessage(responseMessage);
-        }
-        else
-        {
-            throw new Exception($"Key {id} not found in ResponsesDictionary");
-        }
-    }
-
     public void CheckResponse(string response)
     {
         string[] splittedResponse = response.Split(' ');
@@ -43,4 +30,17 @@ class ResponsesDictionary : MonoBehaviour
         Debug.Log($"Received Message: id = {id} message = {responseMessage}");
         CallResponse(id, responseMessage);
     }
+    
+    public void CallResponse(string id, string responseMessage)
+    {
+        if (responsesDictionary.TryGetValue(id, out childResponse))
+        {
+            childResponse.ResponseToMessage(responseMessage);
+        }
+        else
+        {
+            throw new Exception($"Key {id} not found in ResponsesDictionary");
+        }
+    }
+
 }

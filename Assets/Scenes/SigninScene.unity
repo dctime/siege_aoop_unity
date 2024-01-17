@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35e1872c58d9d24db42edf5a4eaaa61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /client_A
+  Topic: /connect
   playerName: {fileID: 996792389}
   responsesDictionary: {fileID: 1253422307}
   signinResponse: {fileID: 1193653013}
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f636a15e532bb49ccb88e457533158a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /client_A
+  Topic: /connect
   playerName: {fileID: 996792389}
   responsesDictionary: {fileID: 1253422307}
   signinResponse: {fileID: 1193653013}
@@ -1227,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31139f5a27b2a452ca5faf5494abd4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childResponse: {fileID: 0}
 --- !u!4 &1253422308
 Transform:
   m_ObjectHideFlags: 0
