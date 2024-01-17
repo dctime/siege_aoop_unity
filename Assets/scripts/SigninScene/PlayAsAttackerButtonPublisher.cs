@@ -21,13 +21,10 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
-        playAsAttackerButtonId = Guid.NewGuid().ToString();
     }
     private void PublishMessage(System.String data)
     {
-
-        // Populate the data in your Float64MultiArray here
-        // For example:
+        playAsAttackerButtonId = Guid.NewGuid().ToString();
         message.data = playAsAttackerButtonId + ' ' + data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
