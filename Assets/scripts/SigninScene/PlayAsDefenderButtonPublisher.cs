@@ -12,23 +12,23 @@ public class PlayAsDefenderButtonAction : UnityPublisher<RosSharp.RosBridgeClien
 {
     [SerializeField]
     private Text playerName;
+    //private string Topic = UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>.Topic;
+    private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
 
-        private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
+    protected override void Start()
+    {
+        base.Start();
+        message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
+    }
+    private void PublishMessage(System.String data)
+    {
 
-        protected override void Start()
-        {
-            base.Start();
-            message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
-        }
-        private void PublishMessage(System.String data)
-        {
-
-            // Populate the data in your Float64MultiArray here
-            // For example:
-            message.data = data;
-            Debug.Log($"Publishing Data: {message.data}");
-            Publish(message);
-        }
+        // Populate the data in your Float64MultiArray here
+        // For example:
+        message.data = data;
+        Debug.Log($"Publishing Data: {message.data}");
+        Publish(message);
+    }
 
     public void playAsDefenderAction()
     {
