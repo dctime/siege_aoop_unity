@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Topic", menuName = "Topic")]
 public class UserTopic : ScriptableObject
 {
+    [SerializeField]
     private string userTopicName = "/connect";
 
     public void SetTopicName(string userTopicName)

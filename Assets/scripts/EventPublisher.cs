@@ -10,7 +10,7 @@ namespace RosSharp.RosBridgeClient
         private String message;
 
         // Start is called before the first frame update
-        private void Start()
+        protected override void Start()
         {
             base.Start();
             message = new String();
