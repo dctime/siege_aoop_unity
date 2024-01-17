@@ -39,7 +39,15 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     public void PlayAsAttackerAction()
     {
+        if (this.playerName.text == "" || this.playerName.text == null)
+        {
+            Debug.Log($"{this.Topic} (player) is trying to become a defender");
+            PublishMessage($"signin D player");
+        }
+        else
+        {
         Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become an attacker");
         PublishMessage($"signin A {this.playerName.text}");
+        }
     }
 }

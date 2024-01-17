@@ -39,8 +39,16 @@ public class PlayAsDefenderButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     public void PlayAsDefenderAction()
     {
-        Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a defender");
-        PublishMessage($"signin D {this.playerName.text}");
+        if (playerName.text == "" || playerName.text == null)
+        {
+            Debug.Log($"{this.Topic} (player) is trying to become a defender");
+            PublishMessage($"signin D player");
+        }
+        else
+        {
+            Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a defender");
+            PublishMessage($"signin D {this.playerName.text}");
+        }
     }
 }
 
