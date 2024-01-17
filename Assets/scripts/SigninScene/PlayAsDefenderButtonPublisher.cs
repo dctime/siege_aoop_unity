@@ -17,22 +17,18 @@ public class PlayAsDefenderButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     private Guid PlayAsDefenderButtonId;
 
-    [SerializeField]
-    private PublisheridDictionary publisheridDictionary;
-
     protected override void Start()
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
         PlayAsDefenderButtonId = Guid.NewGuid();
-        publisheridDictionary.addPublisherid("PlayAsDefenderButtonId", PlayAsDefenderButtonId);
     }
     private void PublishMessage(System.String data)
     {
 
         // Populate the data in your Float64MultiArray here
         // For example:
-        message.data = PlayAsDefenderButtonId + " " + data;
+        message.data = data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
     }

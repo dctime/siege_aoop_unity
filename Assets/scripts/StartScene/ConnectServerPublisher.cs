@@ -13,20 +13,17 @@ public class ConnectServerPublisher : UnityPublisher<RosSharp.RosBridgeClient.Me
     
     private Guid connectServerId;
 
-    [SerializeField]
-    private PublisheridDictionary publisheridDictionary;
 
     protected override void Start()
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
         connectServerId = Guid.NewGuid();
-        publisheridDictionary.addPublisherid("connectServerId", connectServerId);
     }
 
     private void PublishMessage(System.String data)
     {
-        message.data = connectServerId + " " + data;
+        message.data = data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
     }
