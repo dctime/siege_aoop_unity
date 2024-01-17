@@ -23,7 +23,7 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
 
     private void PublishMessage(System.String data)
     {
-        message.data = data;
+        message.data = connectServerId + ' ' + data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
     }
