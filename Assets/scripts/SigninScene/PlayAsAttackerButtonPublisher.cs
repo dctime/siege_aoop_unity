@@ -17,11 +17,15 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     private Guid PlayAsAttackerButtonId;
 
+    [SerializeField]
+    private PublisheridDictionary publisheridDictionary;
+
     protected override void Start()
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
         PlayAsAttackerButtonId = Guid.NewGuid();
+        publisheridDictionary.addPublisherid("PlayAsAttackerButtonId", PlayAsAttackerButtonId);
     }
     private void PublishMessage(System.String data)
     {

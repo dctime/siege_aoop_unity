@@ -12,16 +12,20 @@ public class PlayAsDefenderButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 {
     [SerializeField]
     private Text playerName;
-    //private string Topic = UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>.Topic;
+    
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
 
     private Guid PlayAsDefenderButtonId;
+
+    [SerializeField]
+    private PublisheridDictionary publisheridDictionary;
 
     protected override void Start()
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
         PlayAsDefenderButtonId = Guid.NewGuid();
+        publisheridDictionary.addPublisherid("PlayAsDefenderButtonId", PlayAsDefenderButtonId);
     }
     private void PublishMessage(System.String data)
     {
