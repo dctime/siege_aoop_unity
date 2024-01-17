@@ -263,7 +263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &475893404
 GameObject:
@@ -465,6 +465,8 @@ MonoBehaviour:
   desired_object:
   - {fileID: 475893404}
   - {fileID: 725976717}
+  - {fileID: 1135807291}
+  - {fileID: 383151693}
   updated_rosip: ws://192.168.37.170:9090
 --- !u!4 &498193138
 Transform:
@@ -880,7 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: 
   TimeStep: 0
-  userTopicName: {fileID: 0}
+  userTopicName: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!4 &1135807293
 Transform:
   m_ObjectHideFlags: 0
@@ -1198,7 +1200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253422306
 GameObject:
@@ -1242,7 +1244,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1285209215
 GameObject:
