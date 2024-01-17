@@ -10,6 +10,8 @@ public class ConnectServerSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.
     private bool isMessageReceived;
     [SerializeField]
     private ResponsesDictionary responsesDictionary;
+    [SerializeField]
+    private UserTopic userTopicName;
 
     protected override void Start()
     {

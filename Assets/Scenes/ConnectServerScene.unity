@@ -156,6 +156,7 @@ MonoBehaviour:
   Topic: /server_connect
   TimeStep: 0
   responsesDictionary: {fileID: 1986344286}
+  userTopicName: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!114 &40332997
 MonoBehaviour:
   m_ObjectHideFlags: 0
