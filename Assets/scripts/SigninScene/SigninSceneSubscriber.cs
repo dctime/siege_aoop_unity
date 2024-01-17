@@ -15,7 +15,7 @@ public class SigninSceneSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.Me
 
     protected override void Start()
     {
-        Topic = userTopicName.GetTopicName();
+        Topic = "/server_" + userTopicName.GetTopicName();
         base.Start();
     }
 

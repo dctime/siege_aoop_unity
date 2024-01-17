@@ -13,6 +13,7 @@ public class ConnectServerSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.
 
     protected override void Start()
     {
+        Topic = "/server_" + userTopicName.GetTopicName();
         base.Start();
     }
 
