@@ -15,10 +15,15 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
     private ResponsesDictionary responsesDictionary;
     [SerializeField]
     private ConnectServerResponse connectServerResponse;
+    [SerializeField]
+    private UserTopic userTopicName;
+    private string publicationId;
+    private RosConnector rosConnector;
 
     protected override void Start()
     {
-        base.Start();
+        rosConnector = GetComponent<RosConnector>();
+        publicationId = rosConnector.RosSocket.Advertise<RosSharp.RosBridgeClient.MessageTypes.Std.String>(userTopicName.GetTopicName());
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
     }
 

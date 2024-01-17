@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7086481d073248a793999eff68a95cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userTopicName: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!4 &1202400972
 Transform:
   m_ObjectHideFlags: 0
@@ -567,6 +568,7 @@ MonoBehaviour:
   Topic: /connect
   responsesDictionary: {fileID: 1986344286}
   connectServerResponse: {fileID: 1202400971}
+  userTopicName: {fileID: 0}
 --- !u!114 &1232524493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31139f5a27b2a452ca5faf5494abd4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childResponse: {fileID: 0}
+  childResponse: {fileID: 1202400971}
 --- !u!4 &1986344287
 Transform:
   m_ObjectHideFlags: 0

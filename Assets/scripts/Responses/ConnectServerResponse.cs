@@ -5,6 +5,8 @@ using static AbstractResponse;
 
 public class ConnectServerResponse : AbstractResponse
 {
+    [SerializeField]
+    private UserTopic userTopicName;
     public override void ResponseToMessage(string responseMessage)
     {
         switch (responseMessage)
@@ -16,27 +18,29 @@ public class ConnectServerResponse : AbstractResponse
                 // full
                 // fatal_error
             case "args_must_be_0":
-                Debug.Log("ConnectServer args_must_be_0");
+                Debug.Log("ConnectServerResponse: args_must_be_0");
                 // pop up error message
                 break;
             case "client_A":
-                Debug.Log("ConnectServer client_A");
+                Debug.Log("ConnectServerResponse: client_A");
+                userTopicName.text.SetTopicName("client_A");
                 // assign 'client_A' to 'Topic'
                 break;
             case "client_B":
-                Debug.Log("ConnectServer client_B");
+                Debug.Log("ConnectServerResponse: client_B");
+                userTopicName.text.SetTopicName("client_B");
                 // assign 'client_B' to 'Topic'
                 break;
             case "full":
-                Debug.Log("ConnectServer full");
+                Debug.Log("ConnectServerResponse: full");
                 // pop up error message
                 break;
             case "fatal_error":
-                Debug.Log("ConnectServer fatal_error");
+                Debug.Log("ConnectServerResponse: fatal_error");
                 // pop up error message
                 break;
             default:
-                Debug.Log($"Connect response not recognized: {responseMessage}");
+                Debug.Log($"ConnectServerResponse: Connect response not recognized: {responseMessage}");
                 break;
         }
     }

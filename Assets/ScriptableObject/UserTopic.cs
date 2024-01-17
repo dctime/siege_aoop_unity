@@ -6,7 +6,12 @@ using UnityEngine;
 public class UserTopic : ScriptableObject
 {
     [SerializeField]
-    private string userTopicName = "/connect";
+    private string userTopicName;
+
+    public void OnEnable()
+    {
+        this.userTopicName = "/connect";
+    }
 
     public void SetTopicName(string userTopicName)
     {

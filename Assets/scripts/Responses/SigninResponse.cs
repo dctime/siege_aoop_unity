@@ -18,23 +18,23 @@ public class SigninResponse : AbstractResponse
                 // already_signin
                 // identity_error           
             case "success":
-                Debug.Log("Signin successful");
+                Debug.Log("SigninResponse: successful");
                 // switch to next scene
                 break;
             case "args_len_error":
-                Debug.Log("Signin args_len_error");
+                Debug.Log("SigninResponse: args_len_error");
                 // pop up error message
                 break;
             case "already_signin":
-                Debug.Log("Signin already_signin");
+                Debug.Log("SigninResponse: already_signin");
                 // pop up error message
                 break;
             case "identity_error":
-                Debug.Log("Signin identity_error");
+                Debug.Log("SigninResponse: identity_error");
                 // pop up error message
                 break;
             default:
-                Debug.Log($"Signin response not recognized: {responseMessage}");
+                Debug.Log($"SigninResponse: response not recognized: {responseMessage}");
                 break;
         }
     }
