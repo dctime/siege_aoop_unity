@@ -42,7 +42,7 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
         if (this.playerName.text == "" || this.playerName.text == null)
         {
             Debug.Log($"{this.Topic} (player) is trying to become a defender");
-            PublishMessage($"signin D player");
+            PublishMessage($"signin A player");
         }
         else
         {
