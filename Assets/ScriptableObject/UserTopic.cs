@@ -10,7 +10,7 @@ public class UserTopic : ScriptableObject
 
     public void OnEnable()
     {
-        this.userTopicName = "/connect";
+        this.userTopicName = "connect";
     }
 
     public void SetTopicName(string userTopicName)

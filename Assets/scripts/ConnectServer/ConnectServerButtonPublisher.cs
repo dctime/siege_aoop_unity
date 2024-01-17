@@ -20,7 +20,7 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
 
     protected override void Start()
     {
-        Topic = userTopicName.GetTopicName();
+        Topic = "/" + userTopicName.GetTopicName();
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
     }
