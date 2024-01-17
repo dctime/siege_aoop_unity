@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static AbstractResponse;
 
 public class ConnectServerResponse : AbstractResponse
@@ -24,11 +25,13 @@ public class ConnectServerResponse : AbstractResponse
             case "client_A":
                 Debug.Log("ConnectServerResponse: client_A");
                 userTopicName.SetTopicName("client_A");
+                SceneManager.LoadScene("SigninScene");
                 // assign 'client_A' to 'Topic'
                 break;
             case "client_B":
                 Debug.Log("ConnectServerResponse: client_B");
                 userTopicName.SetTopicName("client_B");
+                SceneManager.LoadScene("SigninScene");
                 // assign 'client_B' to 'Topic'
                 break;
             case "full":
