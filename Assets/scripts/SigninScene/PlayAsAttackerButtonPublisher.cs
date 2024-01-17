@@ -8,24 +8,27 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-public class PlayAsAttackerButtonAction : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     [SerializeField]
     private Text playerName;
 
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
 
+    private Guid PlayAsAttackerButtonId;
+
     protected override void Start()
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
+        PlayAsAttackerButtonId = Guid.NewGuid();
     }
     private void PublishMessage(System.String data)
     {
 
         // Populate the data in your Float64MultiArray here
         // For example:
-        message.data = data;
+        message.data = PlayAsAttackerButtonId + " " + data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
     }
