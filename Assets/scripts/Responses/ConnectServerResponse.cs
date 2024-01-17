@@ -23,12 +23,12 @@ public class ConnectServerResponse : AbstractResponse
                 break;
             case "client_A":
                 Debug.Log("ConnectServerResponse: client_A");
-                userTopicName.text.SetTopicName("client_A");
+                userTopicName.SetTopicName("client_A");
                 // assign 'client_A' to 'Topic'
                 break;
             case "client_B":
                 Debug.Log("ConnectServerResponse: client_B");
-                userTopicName.text.SetTopicName("client_B");
+                userTopicName.SetTopicName("client_B");
                 // assign 'client_B' to 'Topic'
                 break;
             case "full":
