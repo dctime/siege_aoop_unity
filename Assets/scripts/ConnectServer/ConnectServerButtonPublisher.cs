@@ -11,14 +11,14 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
 {
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
     
-    private Guid connectServerId;
+    private string connectServerId;
 
 
     protected override void Start()
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
-        connectServerId = Guid.NewGuid();
+        connectServerId = Guid.NewGuid().ToString();
     }
 
     private void PublishMessage(System.String data)

@@ -15,13 +15,13 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
 
-    private Guid playAsAttackerButtonId;
+    private string playAsAttackerButtonId;
 
     protected override void Start()
     {
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
-        playAsAttackerButtonId = Guid.NewGuid();
+        playAsAttackerButtonId = Guid.NewGuid().ToString();
     }
     private void PublishMessage(System.String data)
     {
