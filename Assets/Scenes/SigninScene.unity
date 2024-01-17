@@ -259,6 +259,7 @@ MonoBehaviour:
   playerName: {fileID: 996792389}
   responsesDictionary: {fileID: 1253422307}
   signinResponse: {fileID: 1193653013}
+  userTopicName: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!114 &475893407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +474,7 @@ MonoBehaviour:
   playerName: {fileID: 996792389}
   responsesDictionary: {fileID: 1253422307}
   signinResponse: {fileID: 1193653013}
+  userTopicName: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!114 &725976720
 MonoBehaviour:
   m_ObjectHideFlags: 0
