@@ -17,13 +17,11 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
     private ConnectServerResponse connectServerResponse;
     [SerializeField]
     private UserTopic userTopicName;
-    private string publicationId;
-    private RosConnector rosConnector;
 
     protected override void Start()
     {
-        rosConnector = GetComponent<RosConnector>();
-        publicationId = rosConnector.RosSocket.Advertise<RosSharp.RosBridgeClient.MessageTypes.Std.String>(userTopicName.GetTopicName());
+        Topic = userTopicName.GetTopicName();
+        base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
     }
 
@@ -34,7 +32,7 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
         responsesDictionary.AddResponse(connectServerId, connectServerResponse);
-        Debug.Log($"Added id,response to dictionary");
+        Debug.Log($"Added id and response to dictionary by {typeof(ConnectServerButtonPublisher)}");
     }
 
     public void ConnectServerAction()

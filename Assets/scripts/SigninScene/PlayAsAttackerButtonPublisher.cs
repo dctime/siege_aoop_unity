@@ -18,9 +18,12 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
     private ResponsesDictionary responsesDictionary;
     [SerializeField]
     private SigninResponse signinResponse;
+    [SerializeField]
+    private UserTopic userTopicName;
 
     protected override void Start()
     {
+        Topic = userTopicName.GetTopicName();
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
     }
@@ -31,7 +34,7 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
         responsesDictionary.AddResponse(playAsAttackerButtonId, signinResponse);
-        Debug.Log($"Added id,response to dictionary");
+        Debug.Log($"Added id and response to dictionary by {typeof(PlayAsAttackerButtonPublisher)}");
     }
 
     public void PlayAsAttackerAction()
