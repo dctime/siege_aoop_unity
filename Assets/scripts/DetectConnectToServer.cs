@@ -30,6 +30,7 @@ public class DetectConnectToServer : UnitySubscriber<RosSharp.RosBridgeClient.Me
 
     private void ProcessMessage()
     {
+        Debug.Log($"Received message: {responseString}");
         if (responseString == "safe"){}
         else if (responseString == "boom")
         {
