@@ -10,9 +10,12 @@ public class SigninSceneSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.Me
     private bool isMessageReceived;
     [SerializeField]
     private ResponsesDictionary responsesDictionary;
+    [SerializeField]
+    private UserTopic userTopicName;
 
     protected override void Start()
     {
+        Topic = userTopicName.GetTopicName();
         base.Start();
     }
 
