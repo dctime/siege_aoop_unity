@@ -7,7 +7,7 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-public class ConnectServerPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
     

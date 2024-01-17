@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Topic", menuName = "Topic")]
 public class UserTopic : ScriptableObject
 {
-    private string userTopicName = "/signin";
+    private string userTopicName = "/connect";
 
     public void SetTopicName(string userTopicName)
     {

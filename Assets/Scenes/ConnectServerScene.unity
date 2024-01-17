@@ -209,7 +209,6 @@ GameObject:
   - component: {fileID: 530770174}
   - component: {fileID: 530770177}
   - component: {fileID: 530770176}
-  - component: {fileID: 530770175}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -236,25 +235,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &530770175
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530770173}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &530770176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +355,8 @@ GameObject:
   - component: {fileID: 1232524491}
   - component: {fileID: 1232524490}
   - component: {fileID: 1232524489}
+  - component: {fileID: 1232524493}
+  - component: {fileID: 1232524492}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -445,7 +427,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1232524490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 504e1082da69d466e91f99999bb767da, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1232524490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +478,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232524487}
   m_CullTransparentMesh: 1
+--- !u!114 &1232524492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232524487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504e1082da69d466e91f99999bb767da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: 
+--- !u!114 &1232524493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232524487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsTimeout: 10
+  Serializer: 0
+  protocol: 0
+  RosBridgeServerUrl: ws://192.168.0.1:9090
 --- !u!1 &1254969723
 GameObject:
   m_ObjectHideFlags: 0
