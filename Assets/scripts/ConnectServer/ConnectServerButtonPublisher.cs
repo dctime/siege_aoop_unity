@@ -13,6 +13,11 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
     
     private string connectServerId;
 
+    [SerializeField]
+    private ResponsesDictionary responsesDictionary;
+
+    [SerializeField]
+    private ConnectServerResponse connectServerResponse;
 
     protected override void Start()
     {
@@ -26,9 +31,10 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
         message.data = connectServerId + ' ' + data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
+        responsesDictionary.AddResponse(connectServerId, connectServerResponse);
     }
 
-    public void connectServerAction()
+    public void ConnectServerAction()
     {
         Debug.Log($"{this.Topic} is trying to connect to server");
         PublishMessage($"connect");

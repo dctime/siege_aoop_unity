@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Response;
+using static AbstractResponse;
 
-public class SigninResponse : Response
+public class SigninResponse : AbstractResponse
 {
-    public override void ResponseToMessage(string response)
+    public override void ResponseToMessage(string responseMessage)
     {
-        string message = TruncateId(response);
-        switch (message)
+        switch (responseMessage)
         {
             
             // client -> server: signin A dctime:
@@ -35,7 +34,7 @@ public class SigninResponse : Response
                 // pop up error message
                 break;
             default:
-                Debug.Log($"Signin response not recognized: {message}");
+                Debug.Log($"Signin response not recognized: {responseMessage}");
                 break;
         }
     }

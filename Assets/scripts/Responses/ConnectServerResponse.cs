@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Response;
+using static AbstractResponse;
 
-public class ConnectServerResponse : Response
+public class ConnectServerResponse : AbstractResponse
 {
-    public override void ResponseToMessage(string response)
+    public override void ResponseToMessage(string responseMessage)
     {
-        string message = TruncateId(response);
-        switch (message)
+        switch (responseMessage)
         {
             // connect command all response:
                 // args_must_be_0
@@ -37,7 +36,7 @@ public class ConnectServerResponse : Response
                 // pop up error message
                 break;
             default:
-                Debug.Log($"Connect response not recognized: {message}");
+                Debug.Log($"Connect response not recognized: {responseMessage}");
                 break;
         }
     }

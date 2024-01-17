@@ -17,6 +17,12 @@ public class PlayAsDefenderButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     private string playAsDefenderButtonId;
 
+    [SerializeField]
+    private ResponsesDictionary responsesDictionary;
+
+    [SerializeField]
+    private SigninResponse signinResponse;
+
     protected override void Start()
     {
         base.Start();
@@ -28,9 +34,10 @@ public class PlayAsDefenderButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
         message.data = playAsDefenderButtonId + ' ' + data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
+        responsesDictionary.AddResponse(playAsDefenderButtonId, signinResponse);
     }
 
-    public void playAsDefenderAction()
+    public void PlayAsDefenderAction()
     {
         Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a defender");
         PublishMessage($"signin D {this.playerName.text}");

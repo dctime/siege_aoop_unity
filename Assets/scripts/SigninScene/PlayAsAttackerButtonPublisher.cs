@@ -17,6 +17,12 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     private string playAsAttackerButtonId;
 
+    [SerializeField]
+    private ResponsesDictionary responsesDictionary;
+
+    [SerializeField]
+    private SigninResponse signinResponse;
+
     protected override void Start()
     {
         base.Start();
@@ -28,9 +34,10 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
         message.data = playAsAttackerButtonId + ' ' + data;
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
+        responsesDictionary.AddResponse(playAsAttackerButtonId, signinResponse);
     }
 
-    public void playAsAttackerAction()
+    public void PlayAsAttackerAction()
     {
         Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a attacker");
         PublishMessage($"signin A {this.playerName.text}");
