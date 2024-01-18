@@ -27,7 +27,7 @@ class ResponsesDictionary : MonoBehaviour
         }
         string id = splittedResponse[0];
         string responseMessage = splittedResponse[1];
-        Debug.Log($"Received Message: id = {id} message = {responseMessage}");
+        Debug.Log($"{typeof(ResponsesDictionary)}: Received Message: id = {id} ; message = {responseMessage}");
         CallResponse(id, responseMessage);
     }
     
@@ -39,7 +39,7 @@ class ResponsesDictionary : MonoBehaviour
         }
         else
         {
-            throw new Exception($"Key {id} not found in ResponsesDictionary");
+            throw new Exception($"{typeof(ResponsesDictionary)}: Key {id} not found in ResponsesDictionary");
         }
     }
 

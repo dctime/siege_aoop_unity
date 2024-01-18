@@ -11,11 +11,11 @@ public class ConnectServerSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.
     [SerializeField]
     private ResponsesDictionary responsesDictionary;
     [SerializeField]
-    private UserTopic userTopicName;
+    private UserRegister userRegister;
 
     protected override void Start()
     {
-        Topic = "/server_" + userTopicName.GetTopicName();
+        Topic = "/server_" + userRegister.GetTopicName();
         base.Start();
     }
 

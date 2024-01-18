@@ -7,7 +7,7 @@ using static AbstractResponse;
 public class ConnectServerResponse : AbstractResponse
 {
     [SerializeField]
-    private UserTopic userTopicName;
+    private UserRegister userRegister;
     public override void ResponseToMessage(string responseMessage)
     {
         switch (responseMessage)
@@ -19,31 +19,21 @@ public class ConnectServerResponse : AbstractResponse
                 // full
                 // fatal_error
             case "args_must_be_0":
-                Debug.Log("ConnectServerResponse: args_must_be_0");
+                Debug.Log($"{typeof(ConnectServerResponse)}: args_must_be_0");
                 // pop up error message
                 break;
-            case "client_A":
-                Debug.Log("ConnectServerResponse: client_A");
-                userTopicName.SetTopicName("client_A");
-                SceneManager.LoadScene("SigninScene");
-                // assign 'client_A' to 'Topic'
-                break;
-            case "client_B":
-                Debug.Log("ConnectServerResponse: client_B");
-                userTopicName.SetTopicName("client_B");
-                SceneManager.LoadScene("SigninScene");
-                // assign 'client_B' to 'Topic'
-                break;
             case "full":
-                Debug.Log("ConnectServerResponse: full");
+                Debug.Log($"{typeof(ConnectServerResponse)}: full");
                 // pop up error message
                 break;
             case "fatal_error":
-                Debug.Log("ConnectServerResponse: fatal_error");
+                Debug.Log($"{typeof(ConnectServerResponse)}: fatal_error");
                 // pop up error message
                 break;
             default:
-                Debug.Log($"ConnectServerResponse: Connect response not recognized: {responseMessage}");
+                Debug.Log($"{typeof(ConnectServerResponse)}: Topic name: {responseMessage}");
+                userRegister.SetTopicName(responseMessage);
+                SceneManager.LoadScene("SigninScene");
                 break;
         }
     }

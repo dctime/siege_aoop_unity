@@ -19,11 +19,11 @@ public class PlayAsDefenderButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
     [SerializeField]
     private SigninResponse signinResponse;
     [SerializeField]
-    private UserTopic userTopicName;
+    private UserRegister userRegister;
 
     protected override void Start()
     {
-        Topic = userTopicName.GetTopicName();
+        Topic = "/" + userRegister.GetTopicName();
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
     }
@@ -34,21 +34,17 @@ public class PlayAsDefenderButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
         responsesDictionary.AddResponse(playAsDefenderButtonId, signinResponse);
-        Debug.Log($"Added id and response to dictionary by {typeof(PlayAsDefenderButtonPublisher)}");
+        Debug.Log($"{typeof(PlayAsDefenderButtonPublisher)}: Added id and response to dictionary");
     }
 
     public void PlayAsDefenderAction()
     {
-        if (playerName.text == "" || playerName.text == null)
+        if (this.playerName.text != "")
         {
-            Debug.Log($"{this.Topic} (player) is trying to become a defender");
-            PublishMessage($"signin D player");
+            userRegister.SetPlayerName(this.playerName.text);
         }
-        else
-        {
-            Debug.Log($"{this.Topic} ({this.playerName.text}) is trying to become a defender");
-            PublishMessage($"signin D {this.playerName.text}");
-        }
+        Debug.Log($"{this.Topic}: ({this.userRegister.GetPlayerName()}) is trying to become a defender");
+        PublishMessage($"signin D {this.userRegister.GetPlayerName()}");
     }
 }
 

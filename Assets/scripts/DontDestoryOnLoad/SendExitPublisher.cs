@@ -11,12 +11,11 @@ public class SendExitPublisher : UnityPublisher<RosSharp.RosBridgeClient.Message
     private string connectServerId;
 
     [SerializeField]
-    private UserTopic topic;
+    private UserRegister userRegister;
 
     private void OnApplicationQuit()
     {
-        string temp_topic = topic.GetTopicName();
-        this.Topic = temp_topic;
+        Topic = userRegister.GetTopicName();
         PublishMessage("exit");
     }
 
