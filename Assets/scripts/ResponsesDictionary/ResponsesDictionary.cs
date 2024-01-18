@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using static AbstractResponse;
 
-// namespace ResponsesDictionary
-// {
-// }
 public class ResponsesDictionary : MonoBehaviour
 {
     [SerializeField]
