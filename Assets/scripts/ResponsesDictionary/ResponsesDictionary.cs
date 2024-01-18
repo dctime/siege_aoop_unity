@@ -6,7 +6,7 @@ using static AbstractResponse;
 // namespace ResponsesDictionary
 // {
 // }
-class ResponsesDictionary : MonoBehaviour
+public class ResponsesDictionary : MonoBehaviour
 {
     [SerializeField]
     private Dictionary<string, AbstractResponse> responsesDictionary;
