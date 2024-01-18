@@ -477,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 866727065}
   - component: {fileID: 866727066}
+  - component: {fileID: 866727067}
   m_Layer: 0
   m_Name: EndSubscriber
   m_TagString: Untagged
@@ -510,6 +511,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6c94fb215314de781403a5656222d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: 
+  TimeStep: 0
+  responsesDictionary: {fileID: 908666197}
+  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+--- !u!114 &866727067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866727064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsTimeout: 10
+  Serializer: 0
+  protocol: 0
+  RosBridgeServerUrl: ws://192.168.37.170:9090
 --- !u!1 &908666195
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31139f5a27b2a452ca5faf5494abd4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childResponse: {fileID: 0}
+  childResponse: {fileID: 1953943021}
 --- !u!1 &954079474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1861080363}
   - component: {fileID: 1861080364}
+  - component: {fileID: 1861080365}
   m_Layer: 0
   m_Name: EndPublisher
   m_TagString: Untagged
@@ -1051,6 +1073,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc46ff05d45140f8a83ad78d14cccdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: 
+  responsesDictionary: {fileID: 908666197}
+  abstractResponse: {fileID: 1953943021}
+  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+--- !u!114 &1861080365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861080362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsTimeout: 10
+  Serializer: 0
+  protocol: 0
+  RosBridgeServerUrl: ws://192.168.37.170:9090
 --- !u!1 &1953943020
 GameObject:
   m_ObjectHideFlags: 0

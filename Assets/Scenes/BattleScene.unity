@@ -123,6 +123,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &188836374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188836376}
+  - component: {fileID: 188836375}
+  m_Layer: 0
+  m_Name: BattleSceneResponse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &188836375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188836374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d27ea6869914269b0f47887f1ec07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &188836376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188836374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -707.6736, y: -12712.375, z: -98971.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264028116
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31139f5a27b2a452ca5faf5494abd4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childResponse: {fileID: 1614923711}
+  childResponse: {fileID: 188836375}
 --- !u!1 &285457844
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604072750}
   - component: {fileID: 604072751}
+  - component: {fileID: 604072752}
   m_Layer: 0
   m_Name: BattleSubscriber
   m_TagString: Untagged
@@ -240,6 +284,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9493bdc543f465a9cec950257329f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: 
+  TimeStep: 0
+  responsesDictionary: {fileID: 264028118}
+  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+--- !u!114 &604072752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604072749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsTimeout: 10
+  Serializer: 0
+  protocol: 0
+  RosBridgeServerUrl: ws://192.168.37.170:9090
 --- !u!1 &814894591
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1724177449
 GameObject:
@@ -446,6 +510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1724177450}
   - component: {fileID: 1724177451}
+  - component: {fileID: 1724177452}
   m_Layer: 0
   m_Name: BattlePublisher
   m_TagString: Untagged
@@ -479,6 +544,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a723ef459e8b946178ea8a34517e0737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: 
+  responsesDictionary: {fileID: 264028118}
+  abstractResponse: {fileID: 188836375}
+  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+--- !u!114 &1724177452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724177449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsTimeout: 10
+  Serializer: 0
+  protocol: 0
+  RosBridgeServerUrl: ws://192.168.37.170:9090
 --- !u!1 &1959403231
 GameObject:
   m_ObjectHideFlags: 0
