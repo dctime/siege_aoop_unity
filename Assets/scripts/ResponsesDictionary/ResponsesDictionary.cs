@@ -23,9 +23,9 @@ public class ResponsesDictionary : MonoBehaviour
     public void CheckResponse(string response)
     {
         string[] splittedResponse = response.Split(' ');
-        if (splittedResponse.Length != 2)
+        if (splittedResponse.Length != 2 && splittedResponse.Length != 1)
         {
-            throw new Exception("Received message must contain 2 words id and response message");
+            throw new Exception("Received message must contain 1(only message) or 2(id and message) words.)");
         }
         else if (splittedResponse.Length == 2)
         {
