@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class BaseSizeModifier : MonoBehaviour
 {
-    [SerializeField]
-    int x;
-
-    [SerializeField]
-    int z;
-
     void Start()
     {
-        transform.localScale = new Vector3(x, transform.localScale.y, z);
+        
+    }
+
+    public void setBaseSize(int x, int y)
+    {
+        transform.localScale = new Vector3(y, 1, x);
     }
 
 }
