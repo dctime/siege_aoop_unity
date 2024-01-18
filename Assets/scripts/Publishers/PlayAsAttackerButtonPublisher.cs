@@ -18,6 +18,7 @@ public class PlayAsAttackerButtonPublisher : AbstractPublisher
         if (this.playerName.text != "")
         {
             userRegister.SetPlayerName(this.playerName.text);
+            userrRegister.SetPlayerIdentity("attacker");
         }
         Debug.Log($"{this.Topic}: ({this.userRegister.GetPlayerName()}) is trying to become an attacker");
         PublishMessage($"signin A {this.userRegister.GetPlayerName()}");
