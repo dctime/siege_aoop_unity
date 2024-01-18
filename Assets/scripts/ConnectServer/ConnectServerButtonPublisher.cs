@@ -16,11 +16,11 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
     [SerializeField]
     private ConnectServerResponse connectServerResponse;
     [SerializeField]
-    private UserTopic userTopicName;
+    private UserRegister userRegister;
 
     protected override void Start()
     {
-        Topic = "/" + userTopicName.GetTopicName();
+        Topic = "/" + userRegister.GetTopicName();
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
     }

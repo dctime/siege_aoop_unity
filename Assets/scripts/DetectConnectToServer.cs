@@ -9,7 +9,7 @@ public class DetectConnectToServer : UnitySubscriber<RosSharp.RosBridgeClient.Me
     private string responseString;
     private bool isMessageReceived;
     [SerializeField]
-    private UserTopic userTopicName;
+    private UserRegister userRegister;
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class DetectConnectToServer : UnitySubscriber<RosSharp.RosBridgeClient.Me
 
     protected override void Start()
     {
-        Topic = "/server_detect_" + userTopicName.GetTopicName();
+        Topic = "/server_detect_" + userRegister.GetTopicName();
         base.Start();
     }
 
