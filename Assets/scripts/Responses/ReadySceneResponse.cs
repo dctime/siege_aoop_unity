@@ -23,7 +23,7 @@ public class ReadySceneResponse : AbstractResponse
     {
         SplitResponse(responseMessage);
         Debug.Log($"{typeof(ReadySceneResponse)}: responseMessage: {responseMessage}");
-        if (splittedResponse[0] == "opponent")
+        if (splittedResponse[0] == "occupied")
         {
             userRegister.SetOpponentPlayerName(splittedResponse[2]);
             userRegister.SetOpponentPlayerIdentity(splittedResponse[1]);
