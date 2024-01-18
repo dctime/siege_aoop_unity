@@ -4,7 +4,7 @@ using UnityEngine;
 using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
 
-public class DetectConnectToServer : UnitySubscriber<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class DetectConnectToServerSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     private string responseString;
     private bool isMessageReceived;

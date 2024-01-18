@@ -6,38 +6,14 @@ using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
+using static AbstractPublisher;
 
-public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class ConnectServerButtonPublisher : AbstractPublisher
 {
-    private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
-    private string connectServerId;
-    [SerializeField]
-    private ResponsesDictionary responsesDictionary;
-    [SerializeField]
-    private ConnectServerResponse connectServerResponse;
-    [SerializeField]
-    private UserRegister userRegister;
-
     protected override void Start()
     {
         Topic = "/" + userRegister.GetTopicName();
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
-    }
-
-    private void PublishMessage(System.String data)
-    {
-        connectServerId = Guid.NewGuid().ToString();
-        message.data = connectServerId + ' ' + data;
-        Debug.Log($"Publishing Data: {message.data}");
-        Publish(message);
-        responsesDictionary.AddResponse(connectServerId, connectServerResponse);
-        Debug.Log($"{typeof(ConnectServerButtonPublisher)}: Added id and response to dictionary");
-    }
-
-    public void ConnectServerAction()
-    {
-        Debug.Log($"{this.Topic} is trying to connect to server");
-        PublishMessage($"connect");
     }
 }
