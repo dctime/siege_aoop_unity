@@ -12,12 +12,6 @@ public class ConnectServerResponse : AbstractResponse
     {
         switch (responseMessage)
         {
-            // connect command all response:
-                // args_must_be_0
-                // client_A
-                // client_B
-                // full
-                // fatal_error
             case "args_must_be_0":
                 Debug.Log($"{typeof(ConnectServerResponse)}: args_must_be_0");
                 // pop up error message

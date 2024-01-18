@@ -9,11 +9,19 @@ public class UserRegister : ScriptableObject
     private string userTopicName;
     [SerializeField]
     private string userPlayerName;
+    [SerializeField]
+    private string userPlayerIdentity;
+    [SerializeField]
+    private string opponentPlayerName;
+    [SerializeField]
+    private string opponentPlayerIdentity;
 
     public void OnEnable()
     {
         this.userTopicName = "connect";
         this.userPlayerName = "player";
+        this.userPlayerIdentity = "none";
+        this.opponentPlayerName = "none";
     }
 
     public void SetTopicName(string userTopicName)
@@ -35,4 +43,36 @@ public class UserRegister : ScriptableObject
     {
         return this.userPlayerName;
     }
+
+    public void SetPlayerIdentity(string userPlayerIdentity)
+    {
+        this.userPlayerIdentity = userPlayerIdentity;
+    }
+
+    public string GetPlayerIdentity()
+    {
+        return this.userPlayerIdentity;
+    }
+
+    public void SetOpponentPlayerName(string opponentPlayerName)
+    {
+        this.opponentPlayerName = opponentPlayerName;
+    }
+
+    public string GetOpponentPlayerName()
+    {
+        return this.opponentPlayerName;
+    }
+
+    public void SetOpponentPlayerIdentity(string opponentPlayerIdentity)
+    {
+        this.opponentPlayerIdentity = opponentPlayerIdentity;
+    }
+
+    public string GetOpponentPlayerIdentity()
+    {
+        return this.opponentPlayerIdentity;
+    }
+
+    
 }

@@ -13,4 +13,22 @@ public class UpdateDisplayText : MonoBehaviour
     private Text opponentNameText;
     [SerializeField]
     private Text opponentIdentityText;
+    [SerializeField]
+    private UserRegister userRegister;
+
+    void Start()
+    {
+        userNameText.text = "YOUR NAME:\n" + userRegister.GetPlayerName();
+        userIdentityText.text = "YOU PLAY AS:\n" + userRegister.GetPlayerIdentity();
+        if (userRegister.GetOpponentPlayerName() != "none" && userRegister.GetOpponentPlayerIdentity() != "none")
+        {
+            opponentNameText.text = "OPPONENT NAME:\n" + userRegister.GetOpponentPlayerName();
+            opponentIdentityText.text = "OPPONENT PLAYS AS:\n" + userRegister.GetOpponentPlayerIdentity();
+        }
+        else
+        {
+            opponentNameText.text = "OPPONENT NAME:\n";
+            opponentIdentityText.text = "OPPONENT PLAYS AS:\n";
+        }
+    }
 }
