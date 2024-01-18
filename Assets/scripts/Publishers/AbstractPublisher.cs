@@ -6,15 +6,15 @@ using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
-using static ResponsesDictionary;
 
-public class AbstractPublisher<fieldrd, fieldr> : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class AbstractPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     protected RosSharp.RosBridgeClient.MessageTypes.Std.String message;
     protected string messageId;
-    protected fieldrd responsesDictionary;
     [SerializeField]
-    protected fieldr abstractResponse;
+    protected ResponsesDictionary responsesDictionary;
+    [SerializeField]
+    protected AbstractResponse abstractResponse;
     [SerializeField]
     protected UserRegister userRegister;
 
