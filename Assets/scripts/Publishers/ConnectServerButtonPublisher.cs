@@ -8,7 +8,7 @@ using UnityEditor;
 using System;
 using static AbstractPublisher;
 
-public class ConnectServerButtonPublisher : AbstractPublisher
+public class ConnectServerButtonPublisher : AbstractPublisher<ResponsesDictionary, ConnectServerResponse>
 {
     protected override void Start()
     {

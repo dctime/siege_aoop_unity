@@ -8,13 +8,13 @@ using UnityEditor;
 using System;
 using static ResponsesDictionary;
 
-public class AbstractPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class AbstractPublisher<fieldrd, fieldr> : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     protected RosSharp.RosBridgeClient.MessageTypes.Std.String message;
     protected string messageId;
-    public ResponsesDictionary responsesDictionary;
+    protected fieldrd responsesDictionary;
     [SerializeField]
-    protected AbstractResponse abstractResponse;
+    protected fieldr abstractResponse;
     [SerializeField]
     protected UserRegister userRegister;
 
