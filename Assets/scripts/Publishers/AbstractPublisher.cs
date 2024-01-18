@@ -6,12 +6,13 @@ using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
+using static ResponsesDictionary;
 
-public abstract class AbstractPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class AbstractPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     protected RosSharp.RosBridgeClient.MessageTypes.Std.String message;
     protected string messageId;
-    protected ResponsesDictionary responsesDictionary;
+    public ResponsesDictionary responsesDictionary;
     [SerializeField]
     protected AbstractResponse abstractResponse;
     [SerializeField]
@@ -34,9 +35,9 @@ public abstract class AbstractPublisher : UnityPublisher<RosSharp.RosBridgeClien
         Debug.Log($"{typeof(AbstractPublisher)}: Added id and response to dictionary");
     }
 
-    public void ConnectServerAction()
+    public virtual void PublisherAction()
     {
-        Debug.Log($"{this.Topic} is trying to connect to server");
-        PublishMessage($"connect");
+        Debug.Log($"{this.Topic} is speaking");
+        PublishMessage($"need to override!");
     }
 }
