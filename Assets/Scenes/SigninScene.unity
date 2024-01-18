@@ -1189,6 +1189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c5f562953244c8b938c574fbf077d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playAsAttackerButton: {fileID: 725976721}
+  playAsDefenderButton: {fileID: 475893408}
 --- !u!4 &1193653014
 Transform:
   m_ObjectHideFlags: 0

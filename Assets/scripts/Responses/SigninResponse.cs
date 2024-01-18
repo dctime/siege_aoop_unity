@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static AbstractResponse;
 
 public class SigninResponse : AbstractResponse
 {
+    [SerializeField]
+    private Button playAsAttackerButton;
+    [SerializeField]
+    private Button playAsDefenderButton;
+
     public override void ResponseToMessage(string responseMessage)
     {
         switch (responseMessage)
@@ -26,8 +32,13 @@ public class SigninResponse : AbstractResponse
                 Debug.Log($"{typeof(SigninResponse)}: identity_error");
                 // pop up error message
                 break;
-            default:
-                Debug.Log($"{typeof(SigninResponse)}: response not recognized: {responseMessage}");
+            case "attacker_occupied":
+                Debug.Log($"{typeof(SigninResponse)}: {responseMessage}");
+                playAsAttackerButton.interactable = false;
+                break;
+            case "defender_occupied":
+                Debug.Log($"{typeof(SigninResponse)}: {responseMessage}");
+                playAsDefenderButton.interactable = false;
                 break;
         }
     }
