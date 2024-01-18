@@ -26,12 +26,12 @@ public class AbstractSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.Messa
     }
 
     protected virtual void ProcessMessage()
-    {
+    {   
+        isMessageReceived = false;
         if (this.responseString != null)
         {
             responsesDictionary.CheckResponse(this.responseString);
-        }   
-        isMessageReceived = false;
+        }
     }
 
     protected override void ReceiveMessage(RosSharp.RosBridgeClient.MessageTypes.Std.String message)
