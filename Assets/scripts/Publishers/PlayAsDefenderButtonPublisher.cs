@@ -18,8 +18,8 @@ public class PlayAsDefenderButtonPublisher : AbstractPublisher
         if (this.playerName.text != "")
         {
             userRegister.SetPlayerName(this.playerName.text);
-            userRegister.SetPlayerIdentity("defender");
         }
+        userRegister.SetPlayerIdentity("defender");
         Debug.Log($"{this.Topic}: ({this.userRegister.GetPlayerName()}) is trying to become a defender");
         PublishMessage($"signin D {this.userRegister.GetPlayerName()}");
     }

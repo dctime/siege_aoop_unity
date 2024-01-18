@@ -44,7 +44,7 @@ public class SigninResponse : AbstractResponse
                     playAsDefenderButton.interactable = false;
                 }
                 else
-                    throw new System.Exception($"{typeof(SigninResponse)}: {responseMessage}");
+                    Debug.LogWarning($"{typeof(SigninResponse)}: {responseMessage}");
             }
         }
     }

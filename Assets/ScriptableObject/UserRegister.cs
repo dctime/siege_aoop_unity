@@ -22,6 +22,7 @@ public class UserRegister : ScriptableObject
         this.userPlayerName = "player";
         this.userPlayerIdentity = "none";
         this.opponentPlayerName = "none";
+        this.opponentPlayerIdentity = "none";
     }
 
     public void SetTopicName(string userTopicName)
