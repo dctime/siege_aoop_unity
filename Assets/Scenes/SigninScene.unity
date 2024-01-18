@@ -386,7 +386,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 475893406}
         m_TargetAssemblyTypeName: PlayAsDefenderButtonPublisher, Assembly-CSharp
-        m_MethodName: PlayAsDefenderAction
+        m_MethodName: PublisherAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -603,7 +603,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 725976719}
         m_TargetAssemblyTypeName: PlayAsAttackerButtonPublisher, Assembly-CSharp
-        m_MethodName: PlayAsAttackerAction
+        m_MethodName: PublisherAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
