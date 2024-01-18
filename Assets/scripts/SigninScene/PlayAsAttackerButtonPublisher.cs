@@ -34,16 +34,16 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
         responsesDictionary.AddResponse(playAsAttackerButtonId, signinResponse);
-        Debug.Log($"Added id and response to dictionary by {typeof(PlayAsAttackerButtonPublisher)}");
+        Debug.Log($"{typeof(PlayAsAttackerButtonPublisher)}: Added id and response to dictionary");
     }
 
     public void PlayAsAttackerAction()
     {
-        if (this.playerName.text != "" || this.playerName.text != null)
+        if (this.playerName.text != "")
         {
             userRegister.SetPlayerName(this.playerName.text);
         }
-        Debug.Log($"{this.Topic} ({this.userRegister.GetPlayerName()}) is trying to become an attacker");
+        Debug.Log($"{this.Topic}: ({this.userRegister.GetPlayerName()}) is trying to become an attacker");
         PublishMessage($"signin A {this.userRegister.GetPlayerName()}");
     }
 }

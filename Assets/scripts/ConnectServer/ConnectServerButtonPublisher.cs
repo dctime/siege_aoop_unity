@@ -32,7 +32,7 @@ public class ConnectServerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCli
         Debug.Log($"Publishing Data: {message.data}");
         Publish(message);
         responsesDictionary.AddResponse(connectServerId, connectServerResponse);
-        Debug.Log($"Added id and response to dictionary by {typeof(ConnectServerButtonPublisher)}");
+        Debug.Log($"{typeof(ConnectServerButtonPublisher)}: Added id and response to dictionary");
     }
 
     public void ConnectServerAction()
