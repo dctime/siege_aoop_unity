@@ -8,36 +8,12 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class PlayAsAttackerButtonPublisher : AbstractPublisher
 {
     [SerializeField]
     private Text playerName;
-    private RosSharp.RosBridgeClient.MessageTypes.Std.String message;
-    private string playAsAttackerButtonId;
-    [SerializeField]
-    private ResponsesDictionary responsesDictionary;
-    [SerializeField]
-    private SigninResponse signinResponse;
-    [SerializeField]
-    private UserRegister userRegister;
 
-    protected override void Start()
-    {
-        Topic = "/" + userRegister.GetTopicName();
-        base.Start();
-        message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
-    }
-    private void PublishMessage(System.String data)
-    {
-        playAsAttackerButtonId = Guid.NewGuid().ToString();
-        message.data = playAsAttackerButtonId + ' ' + data;
-        Debug.Log($"Publishing Data: {message.data}");
-        Publish(message);
-        responsesDictionary.AddResponse(playAsAttackerButtonId, signinResponse);
-        Debug.Log($"{typeof(PlayAsAttackerButtonPublisher)}: Added id and response to dictionary");
-    }
-
-    public void PlayAsAttackerAction()
+    public override void PublisherAction()
     {
         if (this.playerName.text != "")
         {

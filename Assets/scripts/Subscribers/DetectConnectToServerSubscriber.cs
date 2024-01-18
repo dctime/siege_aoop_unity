@@ -4,31 +4,14 @@ using UnityEngine;
 using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
 
-public class DetectConnectToServerSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class DetectConnectToServerSubscriber : AbstractSubscriber
 {
-    private string responseString;
-    private bool isMessageReceived;
-    [SerializeField]
-    private UserRegister userRegister;
-
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
     }
 
-    protected override void Start()
-    {
-        Topic = "/server_detect_" + userRegister.GetTopicName();
-        base.Start();
-    }
-
-    private void Update()
-    {
-        if (isMessageReceived)
-            ProcessMessage();
-    }
-
-    private void ProcessMessage()
+    protected override void ProcessMessage()
     {
         Debug.Log($"Received message: {responseString}");
         if (responseString == "safe"){}
@@ -37,12 +20,6 @@ public class DetectConnectToServerSubscriber : UnitySubscriber<RosSharp.RosBridg
             QuitGame();
         }
         isMessageReceived = false;
-    }
-
-    protected override void ReceiveMessage(RosSharp.RosBridgeClient.MessageTypes.Std.String message)
-    {
-        responseString = message.data;
-        isMessageReceived = true;
     }
 
     public void QuitGame()

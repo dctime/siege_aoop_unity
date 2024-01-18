@@ -7,7 +7,7 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
-public class ReadyScenePublisher : UnityPublisher<RosSharp.RosBridgeClient.MessageTypes.Std.String>
+public class ReadyScenePublisher : AbstractPublisher
 {
     
 }
