@@ -320,10 +320,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /connect
-  playerName: {fileID: 1904057722}
   responsesDictionary: {fileID: 1253422307}
-  signinResponse: {fileID: 1193653013}
+  abstractResponse: {fileID: 1193653013}
   userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+  playerName: {fileID: 1904057722}
 --- !u!114 &475893407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,10 +537,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /connect
-  playerName: {fileID: 1904057722}
   responsesDictionary: {fileID: 1253422307}
-  signinResponse: {fileID: 1193653013}
+  abstractResponse: {fileID: 1193653013}
   userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+  playerName: {fileID: 1904057722}
 --- !u!114 &725976720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: 
   TimeStep: 0
+  responsesDictionary: {fileID: 0}
   userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!4 &1135807293
 Transform:
@@ -1191,6 +1192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playAsAttackerButton: {fileID: 725976721}
   playAsDefenderButton: {fileID: 475893408}
+  userRegister: {fileID: 0}
 --- !u!4 &1193653014
 Transform:
   m_ObjectHideFlags: 0

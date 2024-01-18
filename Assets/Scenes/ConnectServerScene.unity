@@ -568,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /connect
   responsesDictionary: {fileID: 1986344286}
-  connectServerResponse: {fileID: 1202400971}
+  abstractResponse: {fileID: 1202400971}
   userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!114 &1232524493
 MonoBehaviour:
