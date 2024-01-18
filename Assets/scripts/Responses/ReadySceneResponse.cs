@@ -22,8 +22,8 @@ public class ReadySceneResponse : AbstractResponse
     public override void ResponseToMessage(string responseMessage)
     {
         SplitResponse(responseMessage);
-        Debug.Log($"{typeof(ReadySceneResponse)}: opponent name: {splittedResponse[1]}, opponent identity: {splittedResponse[2]}");
-        if (splittedResponse[2] != "none")
+        Debug.Log($"{typeof(ReadySceneResponse)}: responseMessage: {responseMessage}");
+        if (splittedResponse[0] == "opponent")
         {
             userRegister.SetOpponentPlayerName(splittedResponse[2]);
             userRegister.SetOpponentPlayerIdentity(splittedResponse[1]);
