@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 6637c21a7cca24e3d8204cf35f69bbb0
+  - enabled: 1
+    path: Assets/Scenes/EndLoseScene.unity
+    guid: 6a2ac6d94fd381343bdacf2e4ff015e6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
