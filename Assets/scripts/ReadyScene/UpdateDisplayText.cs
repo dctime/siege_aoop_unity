@@ -30,5 +30,6 @@ public class UpdateDisplayText : MonoBehaviour
             opponentNameText.text = "OPPONENT NAME:\n";
             opponentIdentityText.text = "OPPONENT PLAYS AS:\n";
         }
+        Debug.Log($"{typeof(UpdateDisplayText)}: {userRegister.GetPlayerName()}, {userRegister.GetPlayerIdentity()}, {userRegister.GetOpponentPlayerName()}, {userRegister.GetOpponentPlayerIdentity()}");
     }
 }
