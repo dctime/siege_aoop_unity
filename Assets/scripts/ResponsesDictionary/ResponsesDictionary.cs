@@ -22,10 +22,11 @@ public class ResponsesDictionary : MonoBehaviour
     }
     public void CheckResponse(string response)
     {
+
         string[] splittedResponse = response.Split(' ');
         if (splittedResponse.Length != 2 && splittedResponse.Length != 1)
         {
-            throw new Exception("Received message must contain 1(only message) or 2(id and message) words.)");
+            Debug.LogWarning("Received message must contain 1(only message) or 2(id and message) words.)");
         }
         else if (splittedResponse.Length == 2)
         {
@@ -38,7 +39,8 @@ public class ResponsesDictionary : MonoBehaviour
         {
             id = "server";
             responseMessage = splittedResponse[0];
-            Debug.Log($"{typeof(ResponsesDictionary)}: Received Message: id = {id} ; message = {responseMessage}");
+            Debug.Log($"{typeof(ResponsesDictionary)} {responseMessage == splittedResponse[0]}")
+            Debug.Log($"{typeof(ResponsesDictionary)}: {response}");
             CallResponse(id, responseMessage);
         }
     }
@@ -57,7 +59,7 @@ public class ResponsesDictionary : MonoBehaviour
             }
             else
             {
-                throw new Exception($"{typeof(ResponsesDictionary)}: Key {id} not found in ResponsesDictionary");
+                Debug.LogWarning($"{typeof(ResponsesDictionary)}: Key {id} not found in ResponsesDictionary");
             }
         }
     }
