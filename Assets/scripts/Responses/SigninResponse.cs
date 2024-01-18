@@ -26,7 +26,7 @@ public class SigninResponse : AbstractResponse
             SplitResponse(responseMessage);
             if (splittedResponse[0] == "success")
             {
-                Debug.Log($"{typeof(SigninResponse)}: {responseMessage}}");
+                Debug.Log($"{typeof(SigninResponse)}: {responseMessage}");
                 userRegister.SetOpponentPlayerName(splittedResponse[1]);
                 userRegister.SetOpponentPlayerIdentity(splittedResponse[2]);
                 SceneManager.LoadScene("ReadyScene");

@@ -39,7 +39,7 @@ public class ResponsesDictionary : MonoBehaviour
         {
             id = "server";
             responseMessage = splittedResponse[0];
-            Debug.Log($"{typeof(ResponsesDictionary)} {responseMessage == splittedResponse[0]}")
+            Debug.Log($"{typeof(ResponsesDictionary)} {responseMessage == splittedResponse[0]}");
             Debug.Log($"{typeof(ResponsesDictionary)}: {response}");
             CallResponse(id, responseMessage);
         }
