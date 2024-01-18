@@ -22,18 +22,6 @@ public class ConnectServerResponse : AbstractResponse
                 Debug.Log($"{typeof(ConnectServerResponse)}: args_must_be_0");
                 // pop up error message
                 break;
-            case "client_A":
-                Debug.Log($"{typeof(ConnectServerResponse)}: client_A");
-                userRegister.SetTopicName("client_A");
-                SceneManager.LoadScene("SigninScene");
-                // assign 'client_A' to 'Topic'
-                break;
-            case "client_B":
-                Debug.Log($"{typeof(ConnectServerResponse)}: client_B");
-                userRegister.SetTopicName("client_B");
-                SceneManager.LoadScene("SigninScene");
-                // assign 'client_B' to 'Topic'
-                break;
             case "full":
                 Debug.Log($"{typeof(ConnectServerResponse)}: full");
                 // pop up error message
@@ -43,7 +31,9 @@ public class ConnectServerResponse : AbstractResponse
                 // pop up error message
                 break;
             default:
-                Debug.Log($"{typeof(ConnectServerResponse)}: Connect response not recognized: {responseMessage}");
+                Debug.Log($"{typeof(ConnectServerResponse)}: Topic name: {responseMessage}");
+                userRegister.SetTopicName(responseMessage);
+                SceneManager.LoadScene("SigninScene");
                 break;
         }
     }
