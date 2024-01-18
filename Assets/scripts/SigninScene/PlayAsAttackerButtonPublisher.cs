@@ -23,7 +23,7 @@ public class PlayAsAttackerButtonPublisher : UnityPublisher<RosSharp.RosBridgeCl
 
     protected override void Start()
     {
-        Topic = userTopicName.GetTopicName();
+        Topic = "/" + userTopicName.GetTopicName();
         base.Start();
         message = new RosSharp.RosBridgeClient.MessageTypes.Std.String();
     }
