@@ -136,7 +136,7 @@ public class JsonMapBuilder : MonoBehaviour
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "barrier")
                 {
-                    Instantiate(barrier, new Vector3(yIndex, 0, xIndex), Quaternion.Euler(0, Random.Range(0, 360), 0), gameObject.transform);
+                    Instantiate(barrier, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
                 }
 
             }
