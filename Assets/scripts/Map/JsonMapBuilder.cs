@@ -29,6 +29,10 @@ public class JsonMapBuilder : MonoBehaviour
     private int xSize;
     private int ySize;
 
+    private List<string> doorSideAllowed = new List<string>()
+    {
+        "wall"
+    };
     private List<string> windowSideAllowed = new List<string>()
     {
         "window",
@@ -83,30 +87,11 @@ public class JsonMapBuilder : MonoBehaviour
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "door")
                 {
-                    Instantiate(door, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                    CreateDoor(xIndex, yIndex);
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "window")
                 {
-                    ExtendDirection.ExtendDirectionEnum extendDirectionEnum;
-                    if (windowSideAllowed.Contains(GetMapObjectFromMap(xIndex-1, yIndex))
-                        && windowSideAllowed.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
-                    {
-                        extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.XDirection;
-                    }
-                    else if (windowSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex-1))
-                        && windowSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
-                    {
-                        extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.YDirection;
-                    }
-                    else
-                    {
-                        extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.Null;
-                    }
-
-                    
-                    GameObject windowObject = Instantiate(window, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
-                    windowObject.GetComponent<ExtendDirection>().SetExtendDirectionEnum(extendDirectionEnum);
-                        
+                    CreateWindow(xIndex, yIndex);              
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "softWall")
                 {
@@ -114,33 +99,7 @@ public class JsonMapBuilder : MonoBehaviour
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "entrance")
                 {
-                    List<SignRandomer.Direction> allowedDirections = new List<SignRandomer.Direction>();
-
-                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
-                    {
-                        allowedDirections.Add(SignRandomer.Direction.PositiveX);
-                    }
-
-                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex - 1, yIndex)))
-                    {
-                        allowedDirections.Add(SignRandomer.Direction.NegativeX);
-                    }
-
-                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
-                    {
-                        allowedDirections.Add(SignRandomer.Direction.PositiveY);
-                    }
-
-                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex - 1)))
-                    {
-                        allowedDirections.Add(SignRandomer.Direction.NegativeY);
-                    }
-
-                    GameObject entranceObject = Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
-                    int lenAllowDirections = allowedDirections.Count;
-                    
-                    entranceObject.GetComponent<SignRandomer>().SetRotation(allowedDirections.ElementAt(Random.Range(0, lenAllowDirections)));
-
+                    CreateEnntrance(xIndex, yIndex);
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "barrier")
                 {
@@ -151,9 +110,79 @@ public class JsonMapBuilder : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void CreateWindow(int xIndex, int yIndex)
     {
+        ExtendDirection.ExtendDirectionEnum extendDirectionEnum;
+        if (windowSideAllowed.Contains(GetMapObjectFromMap(xIndex-1, yIndex))
+            && windowSideAllowed.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
+        {
+            extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.XDirection;
+        }
+        else if (windowSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex-1))
+            && windowSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
+        {
+            extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.YDirection;
+        }
+        else
+        {
+            extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.Null;
+        }
+
         
+        GameObject windowObject = Instantiate(window, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+        windowObject.GetComponent<ExtendDirection>().SetExtendDirectionEnum(extendDirectionEnum);
+    }
+
+    void CreateDoor(int xIndex, int yIndex)
+    {
+        ExtendDirection.ExtendDirectionEnum extendDirectionEnum;
+        if (doorSideAllowed.Contains(GetMapObjectFromMap(xIndex-1, yIndex))
+            && doorSideAllowed.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
+        {
+            extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.XDirection;
+        }
+        else if (doorSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex-1))
+            && doorSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
+        {
+            extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.YDirection;
+        }
+        else
+        {
+            extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.Null;
+        }
+
+        
+        GameObject doorObject = Instantiate(door, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+        doorObject.GetComponent<ExtendDirection>().SetExtendDirectionEnum(extendDirectionEnum);
+
+    }
+    void CreateEnntrance(int xIndex, int yIndex)
+    {
+        List<SignRandomer.Direction> allowedDirections = new List<SignRandomer.Direction>();
+
+        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
+        {
+            allowedDirections.Add(SignRandomer.Direction.PositiveX);
+        }
+
+        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex - 1, yIndex)))
+        {
+            allowedDirections.Add(SignRandomer.Direction.NegativeX);
+        }
+
+        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
+        {
+            allowedDirections.Add(SignRandomer.Direction.PositiveY);
+        }
+
+        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex - 1)))
+        {
+            allowedDirections.Add(SignRandomer.Direction.NegativeY);
+        }
+
+        GameObject entranceObject = Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+        int lenAllowDirections = allowedDirections.Count;
+        
+        entranceObject.GetComponent<SignRandomer>().SetRotation(allowedDirections.ElementAt(Random.Range(0, lenAllowDirections)));
     }
 }
