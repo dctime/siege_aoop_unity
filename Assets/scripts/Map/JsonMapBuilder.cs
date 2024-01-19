@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using System.Linq;
 
 public class JsonMapBuilder : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class JsonMapBuilder : MonoBehaviour
     {
         "window",
         "wall"
+    };
+
+    private List<string> signAllowFacing = new List<string>()
+    {
+        "barrier",
     };
 
     
@@ -100,7 +106,33 @@ public class JsonMapBuilder : MonoBehaviour
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "entrance")
                 {
-                    Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                    List<SignRandomer.Direction> allowedDirections = new List<SignRandomer.Direction>();
+
+                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
+                    {
+                        allowedDirections.Add(SignRandomer.Direction.PositiveX);
+                    }
+
+                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex - 1, yIndex)))
+                    {
+                        allowedDirections.Add(SignRandomer.Direction.NegativeX);
+                    }
+
+                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
+                    {
+                        allowedDirections.Add(SignRandomer.Direction.PositiveY);
+                    }
+
+                    if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex - 1)))
+                    {
+                        allowedDirections.Add(SignRandomer.Direction.NegativeY);
+                    }
+
+                    GameObject entranceObject = Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                    int lenAllowDirections = allowedDirections.Count;
+                    
+                    entranceObject.GetComponent<SignRandomer>().SetRotation(allowedDirections.ElementAt(Random.Range(0, lenAllowDirections)));
+
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "barrier")
                 {
