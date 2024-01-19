@@ -38,10 +38,16 @@ public class ExtendDirection : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void SwapDirection()
     {
-        
+        if (direction == ExtendDirectionEnum.XDirection)
+        {
+            direction = ExtendDirectionEnum.YDirection;
+        }
+        else if (direction == ExtendDirectionEnum.YDirection)
+        {
+            direction = ExtendDirectionEnum.XDirection;
+        }
     }
+
 }
