@@ -66,7 +66,7 @@ public class JsonMapBuilder : MonoBehaviour
         }
         else
         {
-            Debug.Log(mapList.mapping[mapList.map[y][x]]);
+            // Debug.Log(mapList.mapping[mapList.map[y][x]]);
             return mapList.mapping[mapList.map[y][x]];
         }
         
@@ -100,7 +100,7 @@ public class JsonMapBuilder : MonoBehaviour
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "entrance")
                 {
-                    CreateEnntrance(xIndex, yIndex);
+                    CreateEntrance(xIndex, yIndex);
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "barrier")
                 {
@@ -157,33 +157,36 @@ public class JsonMapBuilder : MonoBehaviour
         doorObject.GetComponent<ExtendDirection>().SetExtendDirectionEnum(extendDirectionEnum);
 
     }
-    void CreateEnntrance(int xIndex, int yIndex)
+    void CreateEntrance(int xIndex, int yIndex)
     {
         List<SignRandomer.Direction> allowedDirections = new List<SignRandomer.Direction>();
-
-        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
+        int lenAllowDirections = 0, count = 1;
+        while (lenAllowDirections != 0 && xIndex + count >= xSize && xIndex - count < 0 && yIndex + count >= ySize && yIndex - count < 0)
         {
-            allowedDirections.Add(SignRandomer.Direction.PositiveX);
+            if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex + count, yIndex)))
+            {
+                allowedDirections.Add(SignRandomer.Direction.PositiveX);
+            }
+
+            if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex - count, yIndex)))
+            {
+                allowedDirections.Add(SignRandomer.Direction.NegativeX);
+            }
+
+            if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex + count)))
+            {
+                allowedDirections.Add(SignRandomer.Direction.PositiveY);
+            }
+
+            if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex - count)))
+            {
+                allowedDirections.Add(SignRandomer.Direction.NegativeY);
+            }
+            lenAllowDirections = allowedDirections.Count;
         }
 
-        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex - 1, yIndex)))
-        {
-            allowedDirections.Add(SignRandomer.Direction.NegativeX);
-        }
-
-        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
-        {
-            allowedDirections.Add(SignRandomer.Direction.PositiveY);
-        }
-
-        if (this.signAllowFacing.Contains(GetMapObjectFromMap(xIndex, yIndex - 1)))
-        {
-            allowedDirections.Add(SignRandomer.Direction.NegativeY);
-        }
-
-        GameObject entranceObject = Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
-        int lenAllowDirections = allowedDirections.Count;
-        
-        entranceObject.GetComponent<SignRandomer>().SetRotation(allowedDirections.ElementAt(Random.Range(0, lenAllowDirections)));
+        GameObject entranceObject = Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.Euler(0, Random.Range(0, 360), 0), gameObject.transform);
+        if (lenAllowDirections != 0)
+            entranceObject.GetComponent<SignRandomer>().SetRotation(allowedDirections.ElementAt(Random.Range(0, lenAllowDirections)));
     }
 }
