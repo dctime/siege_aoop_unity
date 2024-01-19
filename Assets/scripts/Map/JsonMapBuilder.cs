@@ -81,6 +81,7 @@ public class JsonMapBuilder : MonoBehaviour
         {
             for (int xIndex = 0; xIndex < xSize; xIndex++) 
             {
+                Debug.Log($"x: {xIndex}, y: {yIndex}");
                 if (GetMapObjectFromMap(xIndex, yIndex) == "wall")
                 {
                     Instantiate(wall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
