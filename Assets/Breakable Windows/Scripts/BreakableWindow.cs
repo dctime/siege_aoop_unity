@@ -16,7 +16,7 @@ public class BreakableWindow : MonoBehaviour {
 
     [Space]
     public bool preCalculate = true;
-    public bool addTorques = true;
+    public bool addTorques = false;
     public bool hideSplintersInHierarchy = true;
     public bool useCollision = true;
     [Tooltip("Use 0 for breaking immediately if a collision is detected.")]
@@ -46,6 +46,9 @@ public class BreakableWindow : MonoBehaviour {
     private bool allreadyCalculated = false;
     private GameObject splinterParent;
     int[] tris;
+
+    [SerializeField]
+    GameObject targetDestroyObject;
 
     void Start()
     {
@@ -135,7 +138,7 @@ public class BreakableWindow : MonoBehaviour {
         obj.layer = layer.value;
         obj.name = "Glass Splinter";
         if (destroySplintersTime > 0)
-            Destroy(obj, destroySplintersTime);
+            Destroy(targetDestroyObject, destroySplintersTime);
 
 
         if (preCalculate == true)
