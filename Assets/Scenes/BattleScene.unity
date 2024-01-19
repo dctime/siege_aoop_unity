@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -486,7 +486,7 @@ MonoBehaviour:
   basePlane: {fileID: 8014970806514310730, guid: df150daaff6588e4bb24877fb55d695b,
     type: 3}
   wall: {fileID: 8984502449781908055, guid: 34c53c6da4687514eaa7199c689b5167, type: 3}
-  door: {fileID: 1931414345355120087, guid: b8d0e4265bebb144aaadb16068d4eedc, type: 3}
+  door: {fileID: 3252205086923851670, guid: 538e2e25dd0e948e38ad6299aa8b0a7a, type: 3}
   window: {fileID: 975893565015455043, guid: 9c060cae767e7a34c935c613e3b8720f, type: 3}
   softWall: {fileID: 8060906623882765755, guid: db2402211c16942ad887c6da1911d63d,
     type: 3}
