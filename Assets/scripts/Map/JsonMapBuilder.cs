@@ -62,15 +62,25 @@ public class JsonMapBuilder : MonoBehaviour
                     Instantiate(wall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "door")
-                {}
+                {
+                    Instantiate(door, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "window")
-                {}
+                {
+                    Instantiate(window, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "softWall")
-                {}
+                {
+                    Instantiate(softWall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "entrance")
-                {}
+                {
+                    Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "barrier")
-                {}
+                {
+                    Instantiate(barrier, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
 
             }
         }
