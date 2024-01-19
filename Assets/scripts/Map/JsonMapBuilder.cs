@@ -28,6 +28,12 @@ public class JsonMapBuilder : MonoBehaviour
     private int xSize;
     private int ySize;
 
+    private List<string> windowSideAllowed = new List<string>()
+    {
+        "window",
+        "wall"
+    };
+
     
 
 
@@ -69,7 +75,26 @@ public class JsonMapBuilder : MonoBehaviour
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "window")
                 {
-                    Instantiate(window, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                    ExtendDirection.ExtendDirectionEnum extendDirectionEnum;
+                    if (windowSideAllowed.Contains(GetMapObjectFromMap(xIndex-1, yIndex))
+                        && windowSideAllowed.Contains(GetMapObjectFromMap(xIndex + 1, yIndex)))
+                    {
+                        extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.XDirection;
+                    }
+                    else if (windowSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex-1))
+                        && windowSideAllowed.Contains(GetMapObjectFromMap(xIndex, yIndex + 1)))
+                    {
+                        extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.YDirection;
+                    }
+                    else
+                    {
+                        extendDirectionEnum = ExtendDirection.ExtendDirectionEnum.Null;
+                    }
+
+                    
+                    GameObject windowObject = Instantiate(window, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                    windowObject.GetComponent<ExtendDirection>().SetExtendDirectionEnum(extendDirectionEnum);
+                        
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "softWall")
                 {
