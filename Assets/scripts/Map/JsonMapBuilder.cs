@@ -56,8 +56,16 @@ public class JsonMapBuilder : MonoBehaviour
 
     string GetMapObjectFromMap(int x, int y)
     {
-        Debug.Log(mapList.mapping[mapList.map[y][x]]);
-        return mapList.mapping[mapList.map[y][x]];
+        if (x >= this.xSize || x < 0 || y >= this.ySize || y < 0)
+        {
+            return null;
+        }
+        else
+        {
+            Debug.Log(mapList.mapping[mapList.map[y][x]]);
+            return mapList.mapping[mapList.map[y][x]];
+        }
+        
     }
 
     void BuildMap()
