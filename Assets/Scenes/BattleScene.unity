@@ -485,10 +485,11 @@ MonoBehaviour:
   mapJson: {fileID: 4900000, guid: 0b29f58ee8a6a864cbe6d18edd2fa736, type: 3}
   basePlane: {fileID: 8014970806514310730, guid: df150daaff6588e4bb24877fb55d695b,
     type: 3}
-  wall: {fileID: 1458292882305522, guid: dd38b37b510544adbb92ccac89d70202, type: 3}
-  door: {fileID: 100000, guid: e8a0d0b43c85b47f9b45ad53b9da02ff, type: 3}
-  window: {fileID: 100000, guid: bdae47c1ddf3049358f11421fa3be74b, type: 3}
-  softWall: {fileID: 1209130540812548, guid: 16ef128dc42d14db69456063b938fb1d, type: 3}
+  wall: {fileID: 8984502449781908055, guid: 34c53c6da4687514eaa7199c689b5167, type: 3}
+  door: {fileID: 100000, guid: f3575cdd455864d76b0ce1838f0c7a3a, type: 3}
+  window: {fileID: 975893565015455043, guid: 9c060cae767e7a34c935c613e3b8720f, type: 3}
+  softWall: {fileID: 8060906623882765755, guid: db2402211c16942ad887c6da1911d63d,
+    type: 3}
   entrance: {fileID: 1684614133262348, guid: 021c0694291954181b57883b69e4a6c4, type: 3}
   barrier: {fileID: 1980341666605430, guid: 16114d2c1fdc8451e844a8024a4130bf, type: 3}
 --- !u!4 &1457346128
