@@ -9,7 +9,6 @@ public class RandomRotation : MonoBehaviour
     void Start()
     {
         gameObject.transform.SetPositionAndRotation(gameObject.transform.position, Quaternion.Euler(0, Random.Range(0, 360), 0));
-        Debug.Log("ROTATE!");
     }
 
     // Update is called once per frame

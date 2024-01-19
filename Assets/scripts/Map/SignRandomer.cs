@@ -25,4 +25,37 @@ public class SignRandomer : MonoBehaviour
             sign2.SetActive(false);
         }
     }
+
+    public enum Direction
+    {
+        PositiveX,
+        PositiveY,
+        NegativeX,
+        NegativeY
+    }
+
+    public void SetRotation(Direction direction)
+    {
+        switch (direction)
+        {
+            case Direction.PositiveX:
+                this.SetYRotation(Random.Range(225, 315));
+                break;
+            case Direction.PositiveY:
+                this.SetYRotation(Random.Range(-45, 45));
+                break;
+            case Direction.NegativeX:
+                this.SetYRotation(Random.Range(45, 135));
+                break;
+            case Direction.NegativeY:
+                this.SetYRotation(Random.Range(135, 225));
+                break;
+        }
+    }
+
+    private void SetYRotation(float y)
+    {
+        sign1.transform.rotation = UnityEngine.Quaternion.Euler(0, y, 0);
+        sign2.transform.rotation = UnityEngine.Quaternion.Euler(0, y, 0);
+    }
 }
