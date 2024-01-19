@@ -10,7 +10,7 @@ public class BaseSizeModifier : MonoBehaviour
         
     }
 
-    public void setBaseSize(int x, int y)
+    public void SetBaseSize(int x, int y)
     {
         transform.localScale = new Vector3(y, 1, x);
     }
