@@ -9,7 +9,7 @@ public class JsonMapBuilder : MonoBehaviour
     private TextAsset mapJson;
 
     [SerializeField] private GameObject wall;
-    [SerializeField] private GameObject baseBlock;
+    [SerializeField] private GameObject basePlane;
 
     private class MapList
     {
@@ -45,8 +45,8 @@ public class JsonMapBuilder : MonoBehaviour
 
     void BuildMap()
     {
-        GameObject baseObject = Instantiate(baseBlock, new Vector3(0, 0, 0), Quaternion.identity, gameObject.transform);
-        baseObject.GetComponent<BaseSizeModifier>().setBaseSize(xSize, ySize);
+        GameObject baseObject = Instantiate(basePlane, new Vector3(0, 0, 0), Quaternion.identity, gameObject.transform);
+        baseObject.GetComponent<BaseSizeModifier>().SetBaseSize(xSize, ySize);
 
         for (int yIndex = 0; yIndex < ySize; yIndex++) 
         {

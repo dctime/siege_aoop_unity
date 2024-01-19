@@ -484,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapJson: {fileID: 4900000, guid: 0b29f58ee8a6a864cbe6d18edd2fa736, type: 3}
   wall: {fileID: 8984502449781908055, guid: 34c53c6da4687514eaa7199c689b5167, type: 3}
-  baseBlock: {fileID: 7583054969060363695, guid: 1ac44de1c80722642a4390e0c613a650,
+  basePlane: {fileID: 5012555693815278207, guid: 403ae58743fb74174a584bb7c8553ada,
     type: 3}
 --- !u!4 &1457346128
 Transform:
