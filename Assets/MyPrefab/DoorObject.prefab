@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145b57e98a25c4d99819ca2723d819c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakableWindow: {fileID: 0}
+  door: {fileID: 4691973103672057595}
 --- !u!1 &4691973103672057595
 GameObject:
   m_ObjectHideFlags: 0
