@@ -8,8 +8,13 @@ public class JsonMapBuilder : MonoBehaviour
     [SerializeField]
     private TextAsset mapJson;
 
-    [SerializeField] private GameObject wall;
     [SerializeField] private GameObject basePlane;
+    [SerializeField] private GameObject wall;
+    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject window;
+    [SerializeField] private GameObject softWall;
+    [SerializeField] private GameObject entrance;
+    [SerializeField] private GameObject barrier;
 
     private class MapList
     {
@@ -56,6 +61,27 @@ public class JsonMapBuilder : MonoBehaviour
                 {
                     Instantiate(wall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
                 }
+                else if (GetMapObjectFromMap(xIndex, yIndex) == "door")
+                {
+                    Instantiate(door, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
+                else if (GetMapObjectFromMap(xIndex, yIndex) == "window")
+                {
+                    //Instantiate(window, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
+                else if (GetMapObjectFromMap(xIndex, yIndex) == "softWall")
+                {
+                    Instantiate(softWall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
+                else if (GetMapObjectFromMap(xIndex, yIndex) == "entrance")
+                {
+                    //Instantiate(entrance, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
+                else if (GetMapObjectFromMap(xIndex, yIndex) == "barrier")
+                {
+                    //Instantiate(barrier, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                }
+
             }
         }
     }
