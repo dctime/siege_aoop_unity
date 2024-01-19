@@ -490,7 +490,8 @@ MonoBehaviour:
   window: {fileID: 975893565015455043, guid: 9c060cae767e7a34c935c613e3b8720f, type: 3}
   softWall: {fileID: 8060906623882765755, guid: db2402211c16942ad887c6da1911d63d,
     type: 3}
-  entrance: {fileID: 1684614133262348, guid: 021c0694291954181b57883b69e4a6c4, type: 3}
+  entrance: {fileID: 6921100584628649318, guid: f184a08d547b94d6690b4b48c754910c,
+    type: 3}
   barrier: {fileID: 1980341666605430, guid: 16114d2c1fdc8451e844a8024a4130bf, type: 3}
 --- !u!4 &1457346128
 Transform:

@@ -53,10 +53,12 @@ public class JsonMapBuilder : MonoBehaviour
         GameObject baseObject = Instantiate(basePlane, new Vector3(0, 0, 0), Quaternion.identity, gameObject.transform);
         baseObject.GetComponent<BaseSizeModifier>().SetBaseSize(xSize, ySize);
 
+        int random;
         for (int yIndex = 0; yIndex < ySize; yIndex++) 
         {
             for (int xIndex = 0; xIndex < xSize; xIndex++) 
             {
+                random = Random.Range(0, 360);  // Unity's random
                 if (GetMapObjectFromMap(xIndex, yIndex) == "wall")
                 {
                     Instantiate(wall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
@@ -71,7 +73,7 @@ public class JsonMapBuilder : MonoBehaviour
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "softWall")
                 {
-                    Instantiate(softWall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
+                    Instantiate(softWall, new Vector3(yIndex, 0, xIndex), Quaternion.Euler(0, random, 0), gameObject.transform);
                 }
                 else if (GetMapObjectFromMap(xIndex, yIndex) == "entrance")
                 {
