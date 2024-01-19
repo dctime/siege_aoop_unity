@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapJson: {fileID: 4900000, guid: 0b29f58ee8a6a864cbe6d18edd2fa736, type: 3}
   wall: {fileID: 8984502449781908055, guid: 34c53c6da4687514eaa7199c689b5167, type: 3}
-  basePlane: {fileID: 5012555693815278207, guid: 403ae58743fb74174a584bb7c8553ada,
+  basePlane: {fileID: 8014970806514310730, guid: df150daaff6588e4bb24877fb55d695b,
     type: 3}
 --- !u!4 &1457346128
 Transform:
