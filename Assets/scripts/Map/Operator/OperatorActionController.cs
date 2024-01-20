@@ -20,7 +20,7 @@ public class OperatorActionController : MonoBehaviour, IPointerDownHandler, IPoi
 
     private void Start()
     {
-        
+        GetBasePlaneClickEvent();
     }
 
     private void GetBasePlaneClickEvent()
@@ -41,8 +41,6 @@ public class OperatorActionController : MonoBehaviour, IPointerDownHandler, IPoi
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        GetBasePlaneClickEvent();
-
         if (!isChosen) 
         {
             isChosen = true;
@@ -58,7 +56,7 @@ public class OperatorActionController : MonoBehaviour, IPointerDownHandler, IPoi
 
     public void basePlaneClickEventListener(float MapX, float MapY)
     {
-        Debug.Log("Something from basePlaneListener");
+        // Debug.Log("Something from basePlaneListener");
         if (isChosen) 
         {
             operatorMove.Move(MapX, MapY);
