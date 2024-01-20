@@ -17,6 +17,10 @@ public class JsonMapBuilder : MonoBehaviour
     [SerializeField] private GameObject entrance;
     [SerializeField] private GameObject barrier;
 
+    private GameObject basePlaneRealObject;
+
+    public GameObject GetBasePlaneObject() { return basePlaneRealObject; }
+
     private class MapList
     {
         public List<List<int>> map;
@@ -76,6 +80,7 @@ public class JsonMapBuilder : MonoBehaviour
     {
         GameObject baseObject = Instantiate(basePlane, new Vector3(0, 0, 0), Quaternion.identity, gameObject.transform);
         baseObject.GetComponent<BaseSizeModifier>().SetBaseSize(xSize, ySize);
+        basePlaneRealObject = baseObject;
 
         for (int yIndex = 0; yIndex < ySize; yIndex++) 
         {

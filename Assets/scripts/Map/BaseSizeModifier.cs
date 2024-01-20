@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class BaseSizeModifier : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject basePlane;
+
+    public GameObject GetBasePlane() { return basePlane; }
     void Start()
     {
         
