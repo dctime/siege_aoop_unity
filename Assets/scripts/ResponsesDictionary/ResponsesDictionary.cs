@@ -10,7 +10,8 @@ public class ResponsesDictionary : MonoBehaviour
     [SerializeField]
     private Dictionary<string, AbstractResponse> responsesDictionary;
     [SerializeField]
-    private AbstractResponse childResponse;
+    private List<AbstractResponse> childResponses;
+    private AbstractResponse response;
     public void Start()
     {
         responsesDictionary = new Dictionary<string, AbstractResponse>();
@@ -51,13 +52,13 @@ public class ResponsesDictionary : MonoBehaviour
     {
         if (id == "server")
         {
-            childResponse.ResponseToMessage(responseMessage);
+            childResponses[0].ResponseToMessage(responseMessage);
         }
         else
         {
-            if (responsesDictionary.TryGetValue(id, out childResponse))
+            if (responsesDictionary.TryGetValue(id, out response))
             {
-                childResponse.ResponseToMessage(responseMessage);
+                response.ResponseToMessage(responseMessage);
             }
             else
             {
