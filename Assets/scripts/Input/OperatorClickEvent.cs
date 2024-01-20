@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 public class OperatorClickEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerExitHandler, IPointerEnterHandler
 {
     [SerializeField]
-    OperatorAnimationController controller;
+    OperatorMove operatorMove;
     public void OnPointerClick(PointerEventData eventData)
     {
-        controller.PlayDeathAnimation();
         Debug.Log("Operator Clicked");
+        operatorMove.Move(1.3f, 1.6f);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -20,7 +20,6 @@ public class OperatorClickEvent : MonoBehaviour, IPointerDownHandler, IPointerUp
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        controller.PlayJumpAnimation();
         Debug.Log("Operator Enter");
     }
 
