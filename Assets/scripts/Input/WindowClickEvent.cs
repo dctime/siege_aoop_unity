@@ -6,15 +6,12 @@ using UnityEngine.EventSystems;
 public class WindowClickEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerExitHandler, IPointerEnterHandler
 {
     [SerializeField]
-    private BreakableWindow breakableWindow;
+    private BreakEffect breakEffect;
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Window Clicked");
-        if (breakableWindow.isBroken == false)
-        {
-            breakableWindow.breakWindow();
-        }
+        breakEffect.Break();
     }
 
     public void OnPointerDown(PointerEventData eventData)
