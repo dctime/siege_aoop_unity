@@ -14,7 +14,7 @@ public class UserRegister : ScriptableObject
     [SerializeField]
     private string opponentPlayerName;
     [SerializeField]
-    private string opponentPlayerIdentity;
+    private string opponentPlayerIdentity;  
 
     public void OnEnable()
     {
@@ -74,6 +74,9 @@ public class UserRegister : ScriptableObject
     {
         return this.opponentPlayerIdentity;
     }
+
+    
+        
 
     
 }

@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6246d63ed7640c1ad34f8986d2b24f, type: 3}
   m_Name: UserRegister
   m_EditorClassIdentifier: 
+  userTopicName: connect
+  userPlayerName: player
+  userPlayerIdentity: none
+  opponentPlayerName: none
+  opponentPlayerIdentity: none

@@ -17,6 +17,10 @@ public class JsonMapBuilder : MonoBehaviour
     [SerializeField] private GameObject entrance;
     [SerializeField] private GameObject barrier;
 
+    private GameObject basePlaneRealObject;
+
+    public GameObject GetBasePlaneObject() { return basePlaneRealObject; }
+
     private class MapList
     {
         public List<List<int>> map;
@@ -58,7 +62,7 @@ public class JsonMapBuilder : MonoBehaviour
         BuildMap();
     }
 
-    string GetMapObjectFromMap(int x, int y)
+    public string GetMapObjectFromMap(int x, int y)
     {
         if (x >= this.xSize || x < 0 || y >= this.ySize || y < 0)
         {
@@ -76,12 +80,13 @@ public class JsonMapBuilder : MonoBehaviour
     {
         GameObject baseObject = Instantiate(basePlane, new Vector3(0, 0, 0), Quaternion.identity, gameObject.transform);
         baseObject.GetComponent<BaseSizeModifier>().SetBaseSize(xSize, ySize);
+        basePlaneRealObject = baseObject;
 
         for (int yIndex = 0; yIndex < ySize; yIndex++) 
         {
             for (int xIndex = 0; xIndex < xSize; xIndex++) 
             {
-                Debug.Log($"x: {xIndex}, y: {yIndex}");
+                // Debug.Log($"x: {xIndex}, y: {yIndex}");
                 if (GetMapObjectFromMap(xIndex, yIndex) == "wall")
                 {
                     Instantiate(wall, new Vector3(yIndex, 0, xIndex), Quaternion.identity, gameObject.transform);
