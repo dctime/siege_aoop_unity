@@ -1237,7 +1237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31139f5a27b2a452ca5faf5494abd4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childResponse: {fileID: 1193653013}
+  childResponses:
+  - {fileID: 1193653013}
 --- !u!4 &1253422308
 Transform:
   m_ObjectHideFlags: 0
