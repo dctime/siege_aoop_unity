@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OperatorActionController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerExitHandler, IPointerEnterHandler
+public class OperatorActionController : MonoBehaviour, IPointerClickHandler
 {
     public BasePlaneClickEvent basePlaneClickEvent;
 
@@ -18,9 +18,9 @@ public class OperatorActionController : MonoBehaviour, IPointerDownHandler, IPoi
 
     private bool isChosen = false;
 
-    private void Start()
+    private void Update()
     {
-        GetBasePlaneClickEvent();
+        if (basePlaneClickEvent != null) { GetBasePlaneClickEvent(); }
     }
 
     private void GetBasePlaneClickEvent()
@@ -41,17 +41,7 @@ public class OperatorActionController : MonoBehaviour, IPointerDownHandler, IPoi
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!isChosen) 
-        {
-            isChosen = true;
-            basePlaneClickEvent.SetOperatorActionController(this);
-            indicatorObject.SetActive(true);
-        }
-        else if (isChosen)
-        {
-            isChosen = false;
-            indicatorObject.SetActive(false);
-        }
+        
     }
 
     public void basePlaneClickEventListener(float MapX, float MapY)
@@ -63,19 +53,4 @@ public class OperatorActionController : MonoBehaviour, IPointerDownHandler, IPoi
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-    }
 }

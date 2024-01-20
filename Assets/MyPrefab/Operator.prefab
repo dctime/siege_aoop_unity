@@ -2596,6 +2596,7 @@ GameObject:
   - component: {fileID: 1903578584636518233}
   - component: {fileID: 3800869410338667921}
   - component: {fileID: 4354717833053854464}
+  - component: {fileID: 2062335593073452999}
   m_Layer: 0
   m_Name: Operator
   m_TagString: Untagged
@@ -2697,8 +2698,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66b46f09f19f3a40bd69025d5ab3880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basePlaneClickEvent: {fileID: 0}
   indicatorObject: {fileID: 8570266525262440821}
   operatorMove: {fileID: 3800869410338667921}
+  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+--- !u!114 &2062335593073452999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133287281840800768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac8ae8cf2b068a4884fda2a379777b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 8570266525262440821}
 --- !u!1 &8133295477246381634
 GameObject:
   m_ObjectHideFlags: 0

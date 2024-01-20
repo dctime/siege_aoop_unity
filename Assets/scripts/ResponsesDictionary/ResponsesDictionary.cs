@@ -20,6 +20,7 @@ public class ResponsesDictionary : MonoBehaviour
     {
         responsesDictionary.Add(key, value);
     }
+
     public void CheckResponse(string response)
     {
 
@@ -44,6 +45,7 @@ public class ResponsesDictionary : MonoBehaviour
             CallResponse(id, responseMessage);
         }
     }
+    
     
     public void CallResponse(string id, string responseMessage)
     {

@@ -34,7 +34,6 @@ public class PlayerSettingUpFlagPlacer : MonoBehaviour
         else if (userRegister.GetPlayerIdentity() == "defender") { playerIdentity = Identity.DEFENDER; }
 
         Debug.Log("Delete Stuff From Here");
-        playerIdentity = Identity.DEFENDER;
     }
 
     private void GetBasePlaneClickEvent()
