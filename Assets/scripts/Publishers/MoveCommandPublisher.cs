@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class MoveCommandPublisher : AbstractPublisher
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void PublisherAction()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PublishMessage("move 3 1 1");
     }
 }
