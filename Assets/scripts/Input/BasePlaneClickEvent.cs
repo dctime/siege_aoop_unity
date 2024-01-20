@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using System.Security.Policy;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BasePlaneClickEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerExitHandler, IPointerEnterHandler
+public class BasePlaneClickEvent : MonoBehaviour, IPointerClickHandler
 {
     public OperatorActionController currentServerOperatorActionController;
     private PlayerSettingUpPlacer playerSettingUpPlacer;
+    private PlayerSettingUpFlagPlacer playerSettingUpFlagPlacer;
 
     public void SetOperatorActionController(OperatorActionController operatorActionController)
     {
@@ -27,6 +29,16 @@ public class BasePlaneClickEvent : MonoBehaviour, IPointerDownHandler, IPointerU
         return playerSettingUpPlacer;
     }
 
+    public void SetPlayerSettingUpFlagPlacer(PlayerSettingUpFlagPlacer playerSettingUpFlagPlacer)
+    {
+        this.playerSettingUpFlagPlacer = playerSettingUpFlagPlacer;
+    }
+
+    public PlayerSettingUpFlagPlacer GetPlayerSettingUpFlagPlacer()
+    {
+        return playerSettingUpFlagPlacer;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         // Debug.Log($"{eventData.pointerCurrentRaycast.worldPosition}");
@@ -34,27 +46,20 @@ public class BasePlaneClickEvent : MonoBehaviour, IPointerDownHandler, IPointerU
         float MapY = eventData.pointerCurrentRaycast.worldPosition.x;
 
         // Debug.Log($"is {currentServerOperatorActionController} null?");
-        currentServerOperatorActionController.basePlaneClickEventListener(MapX, MapY);
-        playerSettingUpPlacer.basePlaneClickEventListener(MapX, MapY);
-    }
+        if (currentServerOperatorActionController != null) 
+        {
+            currentServerOperatorActionController.basePlaneClickEventListener(MapX, MapY);
+        }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
+        if (playerSettingUpPlacer != null)
+        {
+            playerSettingUpPlacer.basePlaneClickEventListener(MapX, MapY);
+        }
         
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
+        if (playerSettingUpFlagPlacer != null)
+        {
+            playerSettingUpFlagPlacer.basePlaneClickEventListener(MapX, MapY);
+        }
 
     }
 }

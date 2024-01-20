@@ -62,7 +62,7 @@ public class JsonMapBuilder : MonoBehaviour
         BuildMap();
     }
 
-    string GetMapObjectFromMap(int x, int y)
+    public string GetMapObjectFromMap(int x, int y)
     {
         if (x >= this.xSize || x < 0 || y >= this.ySize || y < 0)
         {
