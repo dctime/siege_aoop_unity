@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SetOperatorCommandResponse : AbstractResponse
 {
+    [SerializeField]
+    private TextMeshProUGUI counter;
     public override void ResponseToMessage(string responseMessage)
     {
         // success_n_left
@@ -18,7 +21,9 @@ public class SetOperatorCommandResponse : AbstractResponse
         {
             if (Int32.TryParse(splittedresponseMessage[1], out int countLeft))
             {
-                // DO SOMETHING
+                string displayText;
+                if (countLeft == 0) { displayText = "Waiting For Opponent"; }
+                else {displayText = $"Unplaced Operators: {countLeft}"; }
             }
             else
             {
