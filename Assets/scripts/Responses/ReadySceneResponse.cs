@@ -7,7 +7,6 @@ using static AbstractResponse;
 
 public class ReadySceneResponse : AbstractResponse
 {
-    private string[] splittedResponse;
     [SerializeField]
     private UserRegister userRegister;
     [SerializeField]
@@ -30,10 +29,5 @@ public class ReadySceneResponse : AbstractResponse
             opponentNameText.text = "OPPONENT NAME:\n" + userRegister.GetOpponentPlayerName();
             opponentIdentityText.text = "OPPONENT PLAYS AS:\n" + userRegister.GetOpponentPlayerIdentity();
         }
-    }
-
-    public void SplitResponse(string responseMessage)
-    {
-        splittedResponse = responseMessage.Split('_');
     }
 }

@@ -13,7 +13,6 @@ public class SigninResponse : AbstractResponse
     private Button playAsDefenderButton;
     [SerializeField]
     private UserRegister userRegister;
-    private string[] splittedResponse;
 
     public override void ResponseToMessage(string responseMessage)
     {
@@ -47,10 +46,5 @@ public class SigninResponse : AbstractResponse
                     Debug.LogWarning($"{typeof(SigninResponse)}: {responseMessage}");
             }
         }
-    }
-
-    public void SplitResponse(string responseMessage)
-    {
-        splittedResponse = responseMessage.Split('_');
     }
 }
