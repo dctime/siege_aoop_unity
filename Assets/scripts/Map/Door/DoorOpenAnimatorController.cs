@@ -1,6 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
+using System.Collections.Generic;   
 using UnityEngine;
 
 public class DoorOpenAnimatorController : MonoBehaviour

@@ -18,11 +18,11 @@ public class UserRegister : ScriptableObject
 
     public void OnEnable()
     {
-        // this.userTopicName = "connect";
-        // this.userPlayerName = "player";
-        // this.userPlayerIdentity = "none";
-        // this.opponentPlayerName = "none";
-        // this.opponentPlayerIdentity = "none";
+        this.userTopicName = "connect";
+        this.userPlayerName = "player";
+        this.userPlayerIdentity = "defender";
+        this.opponentPlayerName = "none";
+        this.opponentPlayerIdentity = "none";
     }
 
     public void SetTopicName(string userTopicName)
