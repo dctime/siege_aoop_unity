@@ -50,7 +50,7 @@ public class ReadySceneResponse : AbstractResponse
 
             if (timer > 5)
             {
-                SceneManager.LoadScene("SettingUpScene");
+                SceneManager.LoadScene("ButtonClicker");
             }
 
         }

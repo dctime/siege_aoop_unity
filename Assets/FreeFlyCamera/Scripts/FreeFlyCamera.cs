@@ -150,7 +150,7 @@ public class FreeFlyCamera : MonoBehaviour
         Self Added Code
         */
 
-        Vector3 desiredForward = targetLookObject.GetComponent<JsonMapBuilder>().GetBasePlaneObject().GetComponent<BaseSizeModifier>().GetBasePlane().transform.position - transform.position;
+        Vector3 desiredForward = targetLookObject.transform.position - transform.position;
 
         // Make it unit length!
         desiredForward.Normalize();
@@ -160,7 +160,7 @@ public class FreeFlyCamera : MonoBehaviour
 
         // Smoothly blend from the cameras current rotation, to the
         // desired rotation...
-        float smoothing = 10f;
+        float smoothing = 100f;
         transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, smoothing * Time.deltaTime);
 
         /* Done */
