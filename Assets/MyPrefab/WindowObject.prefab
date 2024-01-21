@@ -4936,6 +4936,7 @@ GameObject:
   - component: {fileID: 4840513889785034383}
   - component: {fileID: 4871397246639530975}
   - component: {fileID: 7157534328860377559}
+  - component: {fileID: 5275648556416320251}
   m_Layer: 0
   m_Name: GlassPlane
   m_TagString: Untagged
@@ -4974,7 +4975,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4886041732467821593}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5033,6 +5034,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisParticleSystem: {fileID: 4731121417928614900}
+--- !u!54 &5275648556416320251
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4886041732467821593}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7356212142125118194
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,6 +5062,8 @@ GameObject:
   - component: {fileID: 5340782437048115463}
   - component: {fileID: 2284383412022236190}
   - component: {fileID: 1471973542470989424}
+  - component: {fileID: 1160184965010805465}
+  - component: {fileID: 5028728903236277400}
   m_Layer: 0
   m_Name: DownWall
   m_TagString: Untagged
@@ -5123,11 +5142,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7356212142125118194}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1160184965010805465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356212142125118194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06eea425be7aa842867ed73b1248033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &5028728903236277400
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356212142125118194}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7454552000373510160
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,8 +15,8 @@ public class DoorClickEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Open the door");
-        controller.PlayOpenNegativeAnimation();
+        // Debug.Log("Open the door");
+        // controller.PlayOpenNegativeAnimation();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -31,7 +31,7 @@ public class DoorClickEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("Close the Door");
-        controller.PlayCloseAnimation();
+        // Debug.Log("Close the Door");
+        // controller.PlayCloseAnimation();
     }
 }

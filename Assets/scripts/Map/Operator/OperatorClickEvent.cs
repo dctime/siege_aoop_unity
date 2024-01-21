@@ -5,19 +5,15 @@ using UnityEngine.EventSystems;
 
 public class OperatorClickEvent : MonoBehaviour, IPointerClickHandler
 {
-    private PlayerGameFlow playerGameFlow;
+
+    private FinishRoundPublisher finishRoundPublisher;
 
     [SerializeField]
     private GameObject indicator;
 
-    public void SetPlayerGameFlow(PlayerGameFlow playerGameFlow)
+    private void Update()
     {
-        this.playerGameFlow = playerGameFlow;
-    }
-
-    public GameObject GetIndicator()
-    {
-        return indicator;
+        if (finishRoundPublisher != null) { finishRoundPublisher = GameObject.Find("FinishRoundCommand").GetComponent<FinishRoundPublisher>(); }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -25,7 +21,8 @@ public class OperatorClickEvent : MonoBehaviour, IPointerClickHandler
         
         if (indicator.activeSelf == true)
         {
-            playerGameFlow.WhenNowControllerOperatorIsClick();
+            finishRoundPublisher.PublisherAction();
+            indicator.SetActive(false);
         }
     }
 }

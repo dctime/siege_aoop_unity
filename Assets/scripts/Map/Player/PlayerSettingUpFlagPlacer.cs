@@ -18,6 +18,9 @@ public class PlayerSettingUpFlagPlacer : MonoBehaviour
     [SerializeField]
     private GameObject map;
 
+    [SerializeField]
+    private SetOperatorCommandPublisher setOperatorCommandPublisher;
+
 
     private List<GameObject> playerFlags = new List<GameObject>();
 
@@ -65,6 +68,7 @@ public class PlayerSettingUpFlagPlacer : MonoBehaviour
             {
                 GameObject playerFlag = Instantiate(flagPrefab, new Vector3((int)MapY, 0, (int)MapX), Quaternion.identity);
                 playerFlags.Add(playerFlag);
+                setOperatorCommandPublisher.PublishOperatorLocation((int)MapX, (int)MapY);
             }
             
         }

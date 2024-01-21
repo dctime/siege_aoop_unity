@@ -14,15 +14,18 @@ public class UserRegister : ScriptableObject
     [SerializeField]
     private string opponentPlayerName;
     [SerializeField]
-    private string opponentPlayerIdentity;  
+    private string opponentPlayerIdentity;
+    [SerializeField]
+    private int maxOperatorCount;
 
     public void OnEnable()
     {
-        // this.userTopicName = "connect";
-        // this.userPlayerName = "player";
-        // this.userPlayerIdentity = "none";
-        // this.opponentPlayerName = "none";
-        // this.opponentPlayerIdentity = "none";
+        this.userTopicName = "connect";
+        this.userPlayerName = "player";
+        this.userPlayerIdentity = "none";
+        this.opponentPlayerName = "none";
+        this.opponentPlayerIdentity = "none";
+        this.maxOperatorCount = 2;
     }
 
     public void SetTopicName(string userTopicName)
@@ -74,6 +77,9 @@ public class UserRegister : ScriptableObject
     {
         return this.opponentPlayerIdentity;
     }
+
+    public void SetMaxOperatorCount(int maxOperatorCount) { this.maxOperatorCount = maxOperatorCount; }
+    public int GetMaxOperatorCount() {  return this.maxOperatorCount; }
 
     
         

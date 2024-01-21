@@ -8,14 +8,7 @@ using UnityEngine.EventSystems;
 
 public class BasePlaneClickEvent : MonoBehaviour, IPointerClickHandler
 {
-    public OperatorActionController currentServerOperatorActionController;
     private PlayerSettingUpFlagPlacer playerSettingUpFlagPlacer;
-
-    public void SetOperatorActionController(OperatorActionController operatorActionController)
-    {
-        this.currentServerOperatorActionController = operatorActionController;
-        Debug.Log($"{currentServerOperatorActionController} is now the new operator controller");
-    }
 
 
     public void SetPlayerSettingUpFlagPlacer(PlayerSettingUpFlagPlacer playerSettingUpFlagPlacer)
@@ -34,11 +27,6 @@ public class BasePlaneClickEvent : MonoBehaviour, IPointerClickHandler
         float MapX = eventData.pointerCurrentRaycast.worldPosition.z;
         float MapY = eventData.pointerCurrentRaycast.worldPosition.x;
 
-        // Debug.Log($"is {currentServerOperatorActionController} null?");
-        if (currentServerOperatorActionController != null) 
-        {
-            currentServerOperatorActionController.basePlaneClickEventListener(MapX, MapY);
-        }
         
         if (playerSettingUpFlagPlacer != null)
         {

@@ -2113,7 +2113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8129623179638108346
 Transform:
   m_ObjectHideFlags: 0
@@ -2595,8 +2595,10 @@ GameObject:
   - component: {fileID: 9035664001959631805}
   - component: {fileID: 1903578584636518233}
   - component: {fileID: 3800869410338667921}
-  - component: {fileID: 4354717833053854464}
   - component: {fileID: 2062335593073452999}
+  - component: {fileID: 6171642552019942764}
+  - component: {fileID: 1224994058347994927}
+  - component: {fileID: 24721232973445186}
   m_Layer: 0
   m_Name: Operator
   m_TagString: Untagged
@@ -2640,7 +2642,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 2dd821c431ca5524cad437b516f00684, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2667,11 +2669,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8133287281840800768}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.9777343, z: 0.521943}
-  m_Center: {x: 0, y: 1.0521759, z: 0.014956899}
+  m_Size: {x: 0.53196067, y: 1.8299795, z: 0.521943}
+  m_Center: {x: -0.012411326, y: 0.9782986, z: 0.014956892}
 --- !u!114 &3800869410338667921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2686,22 +2688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   animationController: {fileID: 9035664001959631805}
---- !u!114 &4354717833053854464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133287281840800768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66b46f09f19f3a40bd69025d5ab3880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basePlaneClickEvent: {fileID: 0}
-  indicatorObject: {fileID: 8570266525262440821}
-  operatorMove: {fileID: 3800869410338667921}
-  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+  jumpHeight: 0
 --- !u!114 &2062335593073452999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2715,6 +2702,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 8570266525262440821}
+--- !u!114 &6171642552019942764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133287281840800768}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 4.97
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1224994058347994927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133287281840800768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa5cc0741c0c464db97725995c83c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 8570266525262440821}
+  outline: {fileID: 6171642552019942764}
+--- !u!54 &24721232973445186
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133287281840800768}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8133295477246381634
 GameObject:
   m_ObjectHideFlags: 0

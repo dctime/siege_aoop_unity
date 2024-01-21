@@ -11,6 +11,8 @@ public class FreeFlyCamera : MonoBehaviour
     #region UI
 
     [Space]
+    // Self added
+    [SerializeField] GameObject targetLookObject;
 
     [SerializeField]
     [Tooltip("The script is currently active")]
@@ -20,7 +22,7 @@ public class FreeFlyCamera : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Camera rotation by mouse movement is active")]
-    private bool _enableRotation = true;
+    private bool _enableRotation = false;
 
     [SerializeField]
     [Tooltip("Sensitivity of mouse rotation")]
@@ -56,11 +58,11 @@ public class FreeFlyCamera : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Move up")]
-    private KeyCode _moveUp = KeyCode.E;
+    private KeyCode _moveUp = KeyCode.W;
 
     [SerializeField]
     [Tooltip("Move down")]
-    private KeyCode _moveDown = KeyCode.Q;
+    private KeyCode _moveDown = KeyCode.S;
 
     [Space]
 
@@ -106,7 +108,7 @@ public class FreeFlyCamera : MonoBehaviour
     private void OnEnable()
     {
         if (_active)
-            _wantedMode = CursorLockMode.Locked;
+           _wantedMode = CursorLockMode.None;
     }
 
     // Apply requested cursor state
@@ -119,7 +121,7 @@ public class FreeFlyCamera : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            _wantedMode = CursorLockMode.Locked;
+            // _wantedMode = CursorLockMode.Locked;
         }
 
         // Apply cursor state
@@ -144,13 +146,32 @@ public class FreeFlyCamera : MonoBehaviour
 
     private void Update()
     {
+        /*
+        Self Added Code
+        */
+
+        Vector3 desiredForward = targetLookObject.GetComponent<JsonMapBuilder>().GetBasePlaneObject().GetComponent<BaseSizeModifier>().GetBasePlane().transform.position - transform.position;
+
+        // Make it unit length!
+        desiredForward.Normalize();
+
+        // Build a look rotation from the desired forward.
+        Quaternion desiredRotation = Quaternion.LookRotation(desiredForward);
+
+        // Smoothly blend from the cameras current rotation, to the
+        // desired rotation...
+        float smoothing = 10f;
+        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, smoothing * Time.deltaTime);
+
+        /* Done */
+
         if (!_active)
             return;
 
         SetCursorState();
 
-        if (Cursor.visible)
-            return;
+        // if (Cursor.visible)
+        //    return;
 
         // Translation
         if (_enableTranslation)
@@ -167,11 +188,11 @@ public class FreeFlyCamera : MonoBehaviour
             if (Input.GetKey(_boostSpeed))
                 currentSpeed = _boostedSpeed;
 
-            if (Input.GetKey(KeyCode.W))
-                deltaPosition += transform.forward;
+            // if (Input.GetKey(KeyCode.W))
+            //     deltaPosition += transform.forward;
 
-            if (Input.GetKey(KeyCode.S))
-                deltaPosition -= transform.forward;
+            // if (Input.GetKey(KeyCode.S))
+            //    deltaPosition -= transform.forward;
 
             if (Input.GetKey(KeyCode.A))
                 deltaPosition -= transform.right;

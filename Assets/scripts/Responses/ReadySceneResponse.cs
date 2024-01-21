@@ -17,6 +17,10 @@ public class ReadySceneResponse : AbstractResponse
     private Text opponentNameText;
     [SerializeField]
     private Text opponentIdentityText;
+    [SerializeField]
+    private Text countDown;
+
+    private bool startTimer = false;
     
     public override void ResponseToMessage(string responseMessage)
     {
@@ -28,6 +32,27 @@ public class ReadySceneResponse : AbstractResponse
             userRegister.SetOpponentPlayerIdentity(splittedResponse[1]);
             opponentNameText.text = "OPPONENT NAME:\n" + userRegister.GetOpponentPlayerName();
             opponentIdentityText.text = "OPPONENT PLAYS AS:\n" + userRegister.GetOpponentPlayerIdentity();
+        }
+        else if (responseMessage == "start_setting")
+        {
+            Debug.Log("Start Count Down");
+            startTimer = true;
+        }
+    }
+
+    float timer = 0;
+    private void Update()
+    {
+        if (startTimer)
+        {
+            timer += Time.deltaTime;
+            countDown.text = $"Start in: {5 - timer}";
+
+            if (timer > 5)
+            {
+                SceneManager.LoadScene("SettingUpScene");
+            }
+
         }
     }
 }

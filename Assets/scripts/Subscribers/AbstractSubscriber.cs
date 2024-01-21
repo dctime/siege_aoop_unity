@@ -37,6 +37,7 @@ public class AbstractSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.Messa
     protected override void ReceiveMessage(RosSharp.RosBridgeClient.MessageTypes.Std.String message)
     {
         responseString = message.data;
+        Debug.Log($"AbstractSubscriber Got: {responseString}");
         isMessageReceived = true;
     }
 }
