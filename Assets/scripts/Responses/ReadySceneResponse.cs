@@ -7,7 +7,6 @@ using static AbstractResponse;
 
 public class ReadySceneResponse : AbstractResponse
 {
-    private string[] splittedResponse;
     [SerializeField]
     private UserRegister userRegister;
     [SerializeField]
@@ -51,10 +50,5 @@ public class ReadySceneResponse : AbstractResponse
             }
 
         }
-    }
-
-    public void SplitResponse(string responseMessage)
-    {
-        splittedResponse = responseMessage.Split('_');
     }
 }
