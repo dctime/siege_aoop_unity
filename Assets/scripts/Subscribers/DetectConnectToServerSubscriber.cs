@@ -19,7 +19,7 @@ public class DetectConnectToServerSubscriber : AbstractSubscriber
         {
             QuitGame();
         }
-        isMessageReceived = false;
+        isMessageReceived = false;  
     }
 
     public void QuitGame()

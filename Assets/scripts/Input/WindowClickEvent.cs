@@ -10,7 +10,7 @@ public class WindowClickEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        breakEffect.Break();
+        // breakEffect.Break();
     }
 
     public void OnPointerDown(PointerEventData eventData)

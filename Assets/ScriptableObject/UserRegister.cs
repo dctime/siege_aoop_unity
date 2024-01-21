@@ -22,7 +22,7 @@ public class UserRegister : ScriptableObject
     {
         this.userTopicName = "connect";
         this.userPlayerName = "player";
-        this.userPlayerIdentity = "defender";
+        this.userPlayerIdentity = "none";
         this.opponentPlayerName = "none";
         this.opponentPlayerIdentity = "none";
         this.maxOperatorCount = 2;

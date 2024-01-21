@@ -12,6 +12,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6171642552019942764, guid: 7324e5d503ad4c8469bc684e93440690,
+        type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171642552019942764, guid: 7324e5d503ad4c8469bc684e93440690,
+        type: 3}
+      propertyPath: outlineColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171642552019942764, guid: 7324e5d503ad4c8469bc684e93440690,
+        type: 3}
+      propertyPath: outlineColor.r
+      value: 0.745283
+      objectReference: {fileID: 0}
     - target: {fileID: 6432186698895184173, guid: 7324e5d503ad4c8469bc684e93440690,
         type: 3}
       propertyPath: m_Mesh
@@ -80,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 8133287281840800768, guid: 7324e5d503ad4c8469bc684e93440690,
         type: 3}
       propertyPath: m_Name
-      value: AttackOperator
+      value: AttackOperator Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8157402283460364746, guid: 7324e5d503ad4c8469bc684e93440690,
         type: 3}

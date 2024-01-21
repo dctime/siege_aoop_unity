@@ -19,11 +19,14 @@ public class SetOperatorCommandResponse : AbstractResponse
         }
         else if (splittedresponseMessage[0] == "success" && splittedresponseMessage[2] == "left")
         {
+            Debug.Log("command get");
             if (Int32.TryParse(splittedresponseMessage[1], out int countLeft))
             {
+                Debug.Log($"Get CountLEft: {countLeft}");
                 string displayText;
                 if (countLeft == 0) { displayText = "Waiting For Opponent"; }
                 else {displayText = $"Unplaced Operators: {countLeft}"; }
+                counter.SetText(displayText);
             }
             else
             {

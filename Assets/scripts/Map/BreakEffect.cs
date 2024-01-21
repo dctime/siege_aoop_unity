@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BreakEffect : MonoBehaviour
 {
     [SerializeField]
     ParticleSystem thisParticleSystem;
+
 
     public void Break()
     {
@@ -15,5 +17,14 @@ public class BreakEffect : MonoBehaviour
             thisParticleSystem.Play();
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<OperatorMove>() != null) 
+        {
+            Break();
+        }
+        // 
     }
 }

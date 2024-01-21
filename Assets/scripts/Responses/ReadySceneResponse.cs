@@ -17,6 +17,8 @@ public class ReadySceneResponse : AbstractResponse
     private Text opponentNameText;
     [SerializeField]
     private Text opponentIdentityText;
+    [SerializeField]
+    private Text countDown;
 
     private bool startTimer = false;
     
@@ -33,6 +35,7 @@ public class ReadySceneResponse : AbstractResponse
         }
         else if (responseMessage == "start_setting")
         {
+            Debug.Log("Start Count Down");
             startTimer = true;
         }
     }
@@ -43,6 +46,7 @@ public class ReadySceneResponse : AbstractResponse
         if (startTimer)
         {
             timer += Time.deltaTime;
+            countDown.text = $"Start in: {5 - timer}";
 
             if (timer > 5)
             {

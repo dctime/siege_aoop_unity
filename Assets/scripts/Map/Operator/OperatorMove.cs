@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -18,6 +19,9 @@ public class OperatorMove : MonoBehaviour
     private bool moving = false;
 
     private Vector3 lastDirNormalized;
+
+    [SerializeField]
+    private float jumpHeight;
 
 
     private void MoveALittle(float x, float z) // Unity loc
@@ -68,6 +72,15 @@ public class OperatorMove : MonoBehaviour
         if (moving)
         {
             MoveALittle(targetY, targetX);
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<WindowBase>() != null)
+        {
+            animationController.PlayJumpAnimation();
         }
     }
 
