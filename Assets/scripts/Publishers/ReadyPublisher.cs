@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ReadyPublisher : AbstractPublisher
 {
-    [SerializeField]
-    private UserRegister userRegister;
     public override void PublisherAction()
     {
         PublishMessage("ready");

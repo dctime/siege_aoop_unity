@@ -639,6 +639,84 @@ MonoBehaviour:
   Serializer: 0
   protocol: 0
   RosBridgeServerUrl: ws://192.168.37.170:9090
+--- !u!1 &911812243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911812245}
+  - component: {fileID: 911812244}
+  - component: {fileID: 911812246}
+  - component: {fileID: 911812247}
+  m_Layer: 0
+  m_Name: RequestCommand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &911812244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911812243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d3e9db7e5085545817698ed93efaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: 
+  responsesDictionary: {fileID: 1452870301}
+  abstractResponse: {fileID: 160880706}
+  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
+--- !u!4 &911812245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911812243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 254.97423, y: 306.64215, z: -556.97565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911812246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911812243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsTimeout: 10
+  Serializer: 0
+  protocol: 0
+  RosBridgeServerUrl: ws://192.168.37.170:9090
+--- !u!114 &911812247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911812243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d559502e1b2d649a788d9cfaebf10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameDirectorMain: {fileID: 0}
 --- !u!1 &1065675830
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +1048,6 @@ MonoBehaviour:
   responsesDictionary: {fileID: 1452870301}
   abstractResponse: {fileID: 1380561431}
   userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
-  userRegister: {fileID: 11400000, guid: a0b9578c00969d54f8b02381d193114c, type: 2}
 --- !u!4 &1380561433
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,6 +1110,8 @@ MonoBehaviour:
   childResponses:
   - {fileID: 160880706}
   - {fileID: 1380561431}
+  - {fileID: 73001381}
+  - {fileID: 73001381}
 --- !u!4 &1452870302
 Transform:
   m_ObjectHideFlags: 0
@@ -1122,6 +1201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1529481374}
+  - component: {fileID: 1529481375}
   m_Layer: 0
   m_Name: GameDirector
   m_TagString: Untagged
@@ -1143,3 +1223,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529481375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529481373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b289cba016a6ea74caa8af795a6b3761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestPublisher: {fileID: 911812244}
