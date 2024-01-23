@@ -199,7 +199,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.37.170:9090
+  RosBridgeServerUrl: ws://192.168.46.170:9090
 --- !u!1 &160880705
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736aff4b7dde79545ae96dc437c5092f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 230127195}
   clickPublisher: {fileID: 73001380}
 --- !u!65 &230127192
 BoxCollider:
@@ -324,7 +325,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac434d30fa0fd41a6a0a4d1ce678be54, type: 2}
+  - {fileID: 2100000, guid: c719e38f25a9480abd2480ab621a2949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -424,7 +425,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 55da28e66df25414bad2e2aab1bcc55f, type: 2}
+  - {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -659,7 +660,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.37.170:9090
+  RosBridgeServerUrl: ws://192.168.46.170:9090
 --- !u!1 &911812243
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +725,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.37.170:9090
+  RosBridgeServerUrl: ws://192.168.46.170:9090
 --- !u!114 &911812247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,7 +790,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8268e9a9864448749656937367e0686, type: 2}
+  - {fileID: 2100000, guid: aadd5a709a48466c887296bb5b1b8110, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1004,7 +1005,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.37.170:9090
+  RosBridgeServerUrl: ws://192.168.46.170:9090
 --- !u!1 &1352718037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1057,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8268e9a9864448749656937367e0686, type: 2}
+  - {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1177,7 +1178,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.37.170:9090
+  RosBridgeServerUrl: ws://192.168.46.170:9090
 --- !u!1 &1452870300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,5 +1340,4 @@ MonoBehaviour:
   requestPublisher: {fileID: 911812244}
   whowinPublisher: {fileID: 1228275212}
   counter: 60
-  counterText: {fileID: 0}
   theBase: {fileID: 1352718037}
