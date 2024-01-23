@@ -17,6 +17,12 @@ public class UserRegister : ScriptableObject
     private string opponentPlayerIdentity;
     [SerializeField]
     private int maxOperatorCount;
+    [SerializeField]
+    private int selfCount;
+    [SerializeField]
+    private int emenyCount;
+    [SerializeField]
+    private string gameResult;
 
     public void OnEnable()
     {
@@ -26,6 +32,9 @@ public class UserRegister : ScriptableObject
         this.opponentPlayerName = "none";
         this.opponentPlayerIdentity = "none";
         this.maxOperatorCount = 2;
+        this.selfCount = 0;
+        this.emenyCount = 0;
+        this.gameResult = "none";
     }
 
     public void SetTopicName(string userTopicName)
@@ -80,6 +89,14 @@ public class UserRegister : ScriptableObject
 
     public void SetMaxOperatorCount(int maxOperatorCount) { this.maxOperatorCount = maxOperatorCount; }
     public int GetMaxOperatorCount() {  return this.maxOperatorCount; }
+
+    public void SetSelfCount(int count) { this.selfCount = count; }
+    public void SetEmenyCount(int count) { this.emenyCount = count; }
+    public int GetSelfCount() { return this.selfCount; }
+    public int GetEmenyCount() { return this.emenyCount; }
+
+    public void SetGameResult(string result) { this.gameResult = result; }
+    public string GetGameResult() { return this.gameResult; }
 
     
         

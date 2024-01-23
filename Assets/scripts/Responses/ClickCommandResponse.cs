@@ -12,13 +12,14 @@ public class ClickCommandResponse : AbstractResponse
 
         string[] splittedResponseMessage = responseMessage.Split('_');
 
-        if (splittedResponseMessage[0] == "success" && splittedResponseMessage.Length == 3)
+        if (splittedResponseMessage[0] == "success")
         {
-            if (!int.TryParse(splittedResponseMessage[1], out int ourCount) && (!int.TryParse(splittedResponseMessage[2], out int emenyCount)))
-            {
-                Debug.Log($"Get my count:{ourCount} emenyCount:{emenyCount}");
-                gameDirectorMain.SetClickCount(ourCount, emenyCount);
-            }
+            
+            int ourCount = Int32.Parse(splittedResponseMessage[1]);
+            int emenyCount = Int32.Parse(splittedResponseMessage[2]);
+            Debug.LogWarning($"Get my count:{ourCount} emenyCount:{emenyCount}");
+            gameDirectorMain.SetClickCount(ourCount, emenyCount);
+            
         }
     }
 }
