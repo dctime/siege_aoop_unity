@@ -4,6 +4,10 @@ using UnityEngine;
 using RosSharp.RosBridgeClient;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
 
+/// <summary>
+/// Represents an abstract base class for subscribers in Unity that receive messages of type String from a ROS topic.
+/// </summary>
+/// <typeparam name="T">The message type to be published.</typeparam>
 public class AbstractSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.MessageTypes.Std.String>
 {
     protected string responseString;
@@ -25,6 +29,9 @@ public class AbstractSubscriber : UnitySubscriber<RosSharp.RosBridgeClient.Messa
             ProcessMessage();
     }
 
+    /// <summary>
+    /// Processes the received message by checking the response string against the responses dictionary.
+    /// </summary>
     protected virtual void ProcessMessage()
     {   
         isMessageReceived = false;

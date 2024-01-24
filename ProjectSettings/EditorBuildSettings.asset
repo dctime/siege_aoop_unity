@@ -17,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ButtonClicker.unity
     guid: 5488baccbdefc9343ac25e6edd8ce18f
-  - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: bffb4c6b343df274eb7dcc8f85f9595b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

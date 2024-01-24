@@ -8,6 +8,9 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
+/// <summary>
+/// It inherits from the AbstractPublisher class.
+/// </summary>
 public class PlayAsDefenderButtonPublisher : AbstractPublisher
 {
     [SerializeField]
@@ -15,6 +18,7 @@ public class PlayAsDefenderButtonPublisher : AbstractPublisher
     
     public override void PublisherAction()
     {
+        // Update the player name if it is not empty
         if (this.playerName.text != "")
         {
             userRegister.SetPlayerName(this.playerName.text);

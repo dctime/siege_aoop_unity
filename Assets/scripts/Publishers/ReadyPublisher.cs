@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// It inherits from the AbstractPublisher class.
+/// </summary>
 public class ReadyPublisher : AbstractPublisher
 {
     public override void PublisherAction()
@@ -12,6 +15,9 @@ public class ReadyPublisher : AbstractPublisher
     float timer = 0;
     bool startTimer = true;
     float maxTime;
+    /// <summary>
+    /// Updates the object once per frame.
+    /// </summary>
     private void Update()
     {
         if (startTimer)

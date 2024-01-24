@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class is responsible for initializing and displaying text in the UI.
+/// </summary>
 public class UpdateDisplayText : MonoBehaviour
 {
     [SerializeField]
@@ -16,6 +19,9 @@ public class UpdateDisplayText : MonoBehaviour
     [SerializeField]
     private UserRegister userRegister;
 
+    /// <summary>
+    /// Initializes the text fields with the player and opponent information.
+    /// </summary>
     void Start()
     {
         userNameText.text = "YOUR NAME:\n" + userRegister.GetPlayerName();

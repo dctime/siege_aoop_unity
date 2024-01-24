@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// It inherits from the AbstractResponse class.
+/// </summary>
 public class SetOperatorCommandResponse : AbstractResponse
 {
     [SerializeField]

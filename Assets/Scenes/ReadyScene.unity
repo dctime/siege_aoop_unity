@@ -280,7 +280,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.37.170:9090
+  RosBridgeServerUrl: ws://192.168.46.170:9090
 --- !u!1 &364737685
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.37.170:9090
+  RosBridgeServerUrl: ws://192.168.46.170:9090
 --- !u!1 &383398099
 GameObject:
   m_ObjectHideFlags: 0
