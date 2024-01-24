@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// It inherits from the AbstractResponse class.
+/// </summary>
 public class WhowinCommandResponse : AbstractResponse
 {
     [SerializeField]

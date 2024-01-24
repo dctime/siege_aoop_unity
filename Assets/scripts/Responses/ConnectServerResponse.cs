@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using static AbstractResponse;
 
+/// <summary>
+/// It inherits from the AbstractResponse class.
+/// </summary>
 public class ConnectServerResponse : AbstractResponse
 {
     [SerializeField]

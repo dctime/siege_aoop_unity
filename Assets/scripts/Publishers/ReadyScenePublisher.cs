@@ -7,6 +7,9 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 using UnityEditor;
 using System;
 
+/// <summary>
+/// It inherits from the AbstractPublisher class.
+/// </summary>
 public class ReadyScenePublisher : AbstractPublisher
 {
     

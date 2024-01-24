@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
+/// <summary>
+/// The main class for the game director.
+/// </summary>
 public class GameDirectorMain : MonoBehaviour
 {
     [SerializeField]
@@ -13,12 +16,26 @@ public class GameDirectorMain : MonoBehaviour
     [SerializeField]
     private WhowinCommandPublisher whowinPublisher;
     
-
     private int emenyClickCount;
     private int myClickCount;
 
+    /// <summary>
+    /// Gets the enemy click count.
+    /// </summary>
+    /// <returns>The enemy click count.</returns>
     public int GetEmenyClickCount() { return  emenyClickCount; }
-    public int GetMyClickCount() { return myClickCount;}
+
+    /// <summary>
+    /// Gets the player's click count.
+    /// </summary>
+    /// <returns>The player's click count.</returns>
+    public int GetMyClickCount() { return myClickCount; }
+
+    /// <summary>
+    /// Sets the click count for both the player and the enemy.
+    /// </summary>
+    /// <param name="myCount">The player's click count.</param>
+    /// <param name="emenyCount">The enemy's click count.</param>
     public void SetClickCount(int myCount, int emenyCount) { this.myClickCount = myCount; this.emenyClickCount = emenyCount; }
 
     // Next update in second
@@ -40,18 +57,21 @@ public class GameDirectorMain : MonoBehaviour
             // Call your fonction
             UpdateEverySecond();
         }
-
     }
-
-    // Update is called once per second
 
     [SerializeField]
     int counter = 60;
     bool isCounting = false;
 
+    /// <summary>
+    /// Starts the countdown.
+    /// </summary>
     public void StartCountDown() { isCounting = true; }
 
-
+    /// <summary>
+    /// Gets the current countdown value.
+    /// </summary>
+    /// <returns>The current countdown value.</returns>
     public int GetCounting() {  return counter; }
 
     [SerializeField]
@@ -76,20 +96,13 @@ public class GameDirectorMain : MonoBehaviour
         }
         else
         {
-
             Debug.LogWarning($" Get Percent {(float)(my) / (float)(my + em)}");
             return (float)(my) / (float)(my + em);
         }
-
-        
     }
 
-    
     void UpdateEverySecond()
     {
-        
-
-
         if (isCounting)
         {
             counter--;

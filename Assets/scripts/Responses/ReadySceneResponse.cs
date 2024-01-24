@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static AbstractResponse;
 
+/// <summary>
+/// It inherits from the AbstractResponse class.
+/// </summary>
 public class ReadySceneResponse : AbstractResponse
 {
     [SerializeField]
